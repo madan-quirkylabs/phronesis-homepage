@@ -54,7 +54,7 @@
           </div>
           <div class="example-row example-row--anomaly">
             <span class="mono example-time">14:01:05</span>
-            <span class="example-action">⚠ Decision: Approved transfer based on stale data</span>
+            <span class="example-action">⚠ Decision: Approved transfer based on stale data <span style="font-size: 0.65rem; padding: 2px 4px; background: rgba(245,158,11,0.2); border-radius: 4px; margin-left: 4px; display: inline-block;">Confidence: Moderate</span></span>
           </div>
         </div>
         <div class="solution-regulation">
@@ -96,14 +96,14 @@
         <div class="solution-number">03</div>
         <div class="solution-icon">🔒</div>
         <h3>Context-Aware Append-Only Ledger</h3>
-        <p>A high-velocity backend (Clojure/RAMA) that chains scattered agent traces into a single, tamper-evident system of record. The logs are immutable — just like a real flight recorder.</p>
+        <p>A high-velocity event-streaming backend that chains scattered agent traces into a single, tamper-evident system of record. The logs are immutable — just like a real flight recorder.</p>
         <div class="solution-architecture">
           <div class="arch-row">
-            <div class="arch-node">OTel Traces</div>
+            <div class="arch-node">Event Depot</div>
             <div class="arch-arrow">→</div>
-            <div class="arch-node">Event Stream</div>
+            <div class="arch-node">Topology</div>
             <div class="arch-arrow">→</div>
-            <div class="arch-node arch-node--highlight">Ledger</div>
+            <div class="arch-node arch-node--highlight">PailState</div>
           </div>
           <div class="arch-detail">Hash-chained · Append-only · Tamper-evident</div>
         </div>
@@ -116,16 +116,16 @@
       <div class="solution-card card" id="solution-mirror">
         <div class="solution-number">04</div>
         <div class="solution-icon">🌐</div>
-        <h3>Autonomous Compliance Data Mirror</h3>
-        <p>Your data stays yours. Phronesis automatically mirrors all execution narratives to your own infrastructure — SQL databases or cheap object storage — with zero lock-in.</p>
+        <h3>Deploy Anywhere: Hosted or Air-Gapped</h3>
+        <p>Your data, your rules. Choose a fully managed cloud for convenience, or deploy 100% on-premise behind your firewall. In our air-gapped mode, your sensitive telemetry never leaves your infrastructure.</p>
         <div class="solution-tiers">
           <div class="mirror-tier">
-            <span class="tier-label">Tier 1</span>
-            <span class="tier-desc">SQL (PostgreSQL, BigQuery) — for BI dashboards</span>
+            <span class="tier-label">Cloud</span>
+            <span class="tier-desc">Fully managed hosted option for rapid deployment</span>
           </div>
           <div class="mirror-tier">
-            <span class="tier-label">Tier 2</span>
-            <span class="tier-desc">NDJSON → S3/GCS — air-gapped forensics</span>
+            <span class="tier-label">In-House</span>
+            <span class="tier-desc">100% air-gapped on-premise deployment</span>
           </div>
         </div>
         <div class="solution-regulation">
