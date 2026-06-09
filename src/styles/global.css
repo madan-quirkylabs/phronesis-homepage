@@ -88,6 +88,10 @@ html {
 
 body {
   background-color: var(--color-bg);
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -266,9 +270,10 @@ code, pre {
 
 /* ── Background Effects ─────────────────────────────────────── */
 .bg-grid {
+  /* Hero keeps a slightly stronger grid on top of body's base grid */
   background-image:
-    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -282,9 +287,12 @@ code, pre {
 
 .bg-surface-alt {
   background-color: #070b14;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3);
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 /* ── Glassmorphism ──────────────────────────────────────────── */
