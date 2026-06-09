@@ -121,6 +121,6 @@ A: Yes. The same Forensic Replay and ledger data that powers the initial notific
 
 ## Next Steps
 
-- [SR 26-2 Alignment](/phronesis-homepage/docs/compliance/sr-26-2)
-- [FAQ](/phronesis-homepage/docs/faq)
+- [SR 26-2 Alignment](/docs/compliance/sr-26-2)
+- [FAQ](/docs/faq)
 - [Contact us for a compliance architecture review](mailto:madan@quirkylabs.ai?subject=DORA%20Architecture%20Review%20Request)

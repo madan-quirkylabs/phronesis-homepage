@@ -68,7 +68,7 @@ Phronesis exposes a verification API endpoint that allows internal auditors or e
 Raw events are projected into multiple materialized views for different consumption patterns:
 
 ### 1. The Workflow Timeline View
-A pre-computed, human-readable timeline for each `trace_id`. This is what powers the [Forensic Reasoning Replay](/phronesis-homepage/docs/architecture/forensic-reasoning-replay). Updated in real time as new spans arrive.
+A pre-computed, human-readable timeline for each `trace_id`. This is what powers the [Forensic Reasoning Replay](/docs/architecture/forensic-reasoning-replay). Updated in real time as new spans arrive.
 
 ### 2. The Anomaly Index
 An inverted index of all flagged anomalies, indexed by:
@@ -126,5 +126,5 @@ NDJSON archives can be "rehydrated" into **ephemeral, air-gapped Shadow Clusters
 
 ## Next Steps
 
-- [DORA Article 19 Compliance](/phronesis-homepage/docs/compliance/dora-article-19)
-- [SR 26-2 Alignment](/phronesis-homepage/docs/compliance/sr-26-2)
+- [DORA Article 19 Compliance](/docs/compliance/dora-article-19)
+- [SR 26-2 Alignment](/docs/compliance/sr-26-2)

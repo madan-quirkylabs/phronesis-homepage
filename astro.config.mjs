@@ -2,8 +2,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
-  site: 'https://madan-quirkylabs.github.io',
-  base: '/phronesis-homepage',
+  site: 'https://quirkylabs.ai',
   output: 'static',
   integrations: [
     starlight({

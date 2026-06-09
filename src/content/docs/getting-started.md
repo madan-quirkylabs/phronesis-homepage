@@ -159,5 +159,5 @@ resource:
 
 ## Next Steps
 
-- [Architecture: Forensic Reasoning Replay](/phronesis-homepage/docs/architecture/forensic-reasoning-replay)
-- [Compliance: DORA Article 19 Requirements](/phronesis-homepage/docs/compliance/dora-article-19)
+- [Architecture: Forensic Reasoning Replay](/docs/architecture/forensic-reasoning-replay)
+- [Compliance: DORA Article 19 Requirements](/docs/compliance/dora-article-19)

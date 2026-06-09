@@ -138,5 +138,5 @@ The Forensic Reasoning Replay directly satisfies this requirement by providing:
 
 ## Next Steps
 
-- [Append-Only Ledger Architecture](/phronesis-homepage/docs/architecture/append-only-ledger)
-- [1-Click DORA Evidence Pack — DORA Article 19](/phronesis-homepage/docs/compliance/dora-article-19)
+- [Append-Only Ledger Architecture](/docs/architecture/append-only-ledger)
+- [1-Click DORA Evidence Pack — DORA Article 19](/docs/compliance/dora-article-19)

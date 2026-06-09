@@ -74,9 +74,9 @@ For banks deploying AI, Phronesis is that recorder.
 
 <CardGrid>
   <Card title="Connect your OTel Exporter" icon="setting">
-    Start ingesting AI agent traces in minutes. [Getting Started →](/phronesis-homepage/docs/getting-started)
+    Start ingesting AI agent traces in minutes. [Getting Started →](/docs/getting-started)
   </Card>
   <Card title="DORA Compliance Guide" icon="document">
-    Learn how Phronesis maps to DORA Article 19. [Read the guide →](/phronesis-homepage/docs/compliance/dora-article-19)
+    Learn how Phronesis maps to DORA Article 19. [Read the guide →](/docs/compliance/dora-article-19)
   </Card>
 </CardGrid>

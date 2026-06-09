@@ -28,7 +28,7 @@ No. Phronesis is a **passive interceptor**. Your AI agents continue to run exact
 
 **Q: What AI frameworks does Phronesis support?**
 
-Any framework that emits OpenTelemetry traces using the [GenAI Semantic Conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/). This includes LangChain, LlamaIndex, Semantic Kernel, Autogen, and custom agent implementations. See the [Getting Started guide](/phronesis-homepage/docs/getting-started) for details.
+Any framework that emits OpenTelemetry traces using the [GenAI Semantic Conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/). This includes LangChain, LlamaIndex, Semantic Kernel, Autogen, and custom agent implementations. See the [Getting Started guide](/docs/getting-started) for details.
 
 ---
 
@@ -92,7 +92,7 @@ Zero latency on the agent's critical path. Phronesis ingestion is asynchronous â
 
 During the pilot: in an isolated Phronesis staging environment in your preferred cloud region (AWS, GCP, or Azure).
 
-In production: in a dedicated, single-tenant Phronesis environment. Your data is never co-mingled with other tenants. All data is also mirrored to your own infrastructure (SQL or object storage) via the [Autonomous Compliance Data Mirror](/phronesis-homepage/docs/architecture/append-only-ledger#data-retention--mirroring).
+In production: in a dedicated, single-tenant Phronesis environment. Your data is never co-mingled with other tenants. All data is also mirrored to your own infrastructure (SQL or object storage) via the [Autonomous Compliance Data Mirror](/docs/architecture/append-only-ledger#data-retention--mirroring).
 
 ---
 
