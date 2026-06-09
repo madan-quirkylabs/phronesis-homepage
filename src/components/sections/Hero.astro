@@ -1,0 +1,180 @@
+---
+// Hero.astro
+import DoraCountdown from '../ui/DoraCountdown.astro';
+---
+<section class="hero section bg-grid" id="hero">
+  <div class="hero-radial" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <!-- Eyebrow -->
+      <div class="hero-eyebrow">
+        <span class="badge badge-amber">⚡ DORA enforcement is live</span>
+        <span class="badge badge-cyan">Now in Private Beta</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="hero-headline">
+        Your AI is ready.<br/>
+        <span class="headline-accent">Your auditors aren't.</span>
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="hero-sub">
+        Phronesis captures every decision your AI agent makes — so when the regulator calls,
+        you have the forensic evidence ready in <strong>seconds, not days.</strong>
+      </p>
+
+      <!-- High-concept pitch -->
+      <div class="hero-hcp">
+        <span class="mono">// high concept</span>
+        <span class="hcp-text">"The Black Box Flight Recorder for Agentic AI"</span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary" id="hero-cta-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Request Early Access
+        </a>
+        <a href="#how-it-works" class="btn btn-ghost" id="hero-cta-secondary">
+          See How It Works
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="hero-trust">
+        <span>Built for</span>
+        <span class="trust-item">🏦 EU DORA</span>
+        <span class="trust-sep">·</span>
+        <span class="trust-item">🇺🇸 SR 26-2</span>
+        <span class="trust-sep">·</span>
+        <span class="trust-item">🔒 OTel-Native</span>
+        <span class="trust-sep">·</span>
+        <span class="trust-item">⚡ Clojure/RAMA</span>
+      </div>
+    </div>
+
+    <!-- Visual widget -->
+    <div class="hero-visual">
+      <DoraCountdown />
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* navbar offset */
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-radial {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 700px;
+  background: radial-gradient(ellipse, rgba(0,212,255,0.07) 0%, rgba(59,130,246,0.04) 40%, transparent 70%);
+  pointer-events: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content {
+  animation: slide-up 0.7s ease both;
+}
+
+.hero-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-headline {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+.headline-accent {
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+.hero-sub strong { color: var(--color-text); font-weight: 600; }
+
+.hero-hcp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-cyan);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+}
+.hero-hcp .mono { font-size: 0.7rem; color: var(--color-text-dim); }
+.hcp-text {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+.trust-item {
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.trust-sep { color: var(--color-text-dim); }
+
+.hero-visual {
+  animation: slide-up 0.7s ease 0.2s both;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero { min-height: auto; padding-block: 6rem 4rem; }
+}
+</style>

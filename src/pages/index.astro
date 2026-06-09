@@ -1,0 +1,73 @@
+---
+// src/pages/index.astro — Phronesis Marketing Landing Page
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Problem from '../components/sections/Problem.astro';
+import Solution from '../components/sections/Solution.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import CustomerSegments from '../components/sections/CustomerSegments.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import About from '../components/sections/About.astro';
+import Waitlist from '../components/sections/Waitlist.astro';
+import '../styles/global.css';
+
+const title = 'Phronesis — The Black Box Flight Recorder for Agentic AI';
+const description = 'Phronesis translates unreadable AI telemetry into structured, chronological audit trails. Get the forensic evidence needed to file a DORA incident report in under 4 hours.';
+const canonicalURL = 'https://madan-quirkylabs.github.io/phronesis-homepage/';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:site_name" content="Phronesis by QuirkyLabs.ai" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Keywords -->
+  <meta name="keywords" content="DORA compliance, AI governance, agentic AI, OpenTelemetry, SR 26-2, AI audit trail, AI incident reporting, financial AI compliance, AI explainability" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/phronesis-homepage/favicon.svg" />
+
+  <!-- Google Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" />
+</head>
+<body>
+  <Navbar />
+
+  <main id="main-content">
+    <Hero />
+    <Problem />
+    <Solution />
+    <HowItWorks />
+    <CustomerSegments />
+    <Pricing />
+    <About />
+    <Waitlist />
+  </main>
+
+  <Footer />
+</body>
+</html>

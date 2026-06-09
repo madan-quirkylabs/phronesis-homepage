@@ -1,0 +1,300 @@
+---
+// Waitlist.astro
+---
+<section class="section waitlist-section bg-grid" id="waitlist">
+  <div class="waitlist-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="waitlist-inner">
+      <!-- Top badge -->
+      <div class="waitlist-badge">
+        <span class="badge badge-amber">⚡ Private Beta — Limited Design Partners</span>
+      </div>
+
+      <!-- Headline -->
+      <h2 class="waitlist-headline">Get your AI out of Purgatory.</h2>
+      <p class="waitlist-sub">
+        Join a small cohort of banks and FinTechs who are first to deploy Phronesis. 
+        Design Partners get hands-on onboarding, early pricing, and direct influence over the product roadmap.
+      </p>
+
+      <!-- CTA Card -->
+      <div class="waitlist-card">
+        <div class="waitlist-card-left">
+          <div class="contact-method">
+            <div class="contact-icon">✉</div>
+            <div>
+              <div class="contact-label">Reach out directly</div>
+              <a href="mailto:madan@quirkylabs.ai?subject=Phronesis%20Early%20Access%20Request&body=Hi%20Madan%2C%0A%0AI%27m%20interested%20in%20early%20access%20to%20Phronesis.%0A%0AName%3A%20%0AOrganisation%3A%20%0ARole%3A%20%0A%0AWe%20are%20trying%20to%20solve%3A%20%0A%0AHappy%20to%20schedule%20a%20call%20to%20discuss."
+                class="contact-email"
+                id="waitlist-email-link">
+                madan@quirkylabs.ai
+              </a>
+              <div class="contact-note">Response within 24 hours</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="contact-copy-area">
+            <div class="copy-label mono">// Email template — copy and send</div>
+            <div class="email-template">
+              <div><strong>Subject:</strong> Phronesis Early Access Request</div>
+              <div><strong>To:</strong> madan@quirkylabs.ai</div>
+              <div class="template-body">
+                Hi Madan,<br/><br/>
+                I'm interested in early access to Phronesis.<br/><br/>
+                Name: [your name]<br/>
+                Organisation: [bank / FinTech name]<br/>
+                Role: [your title]<br/>
+                We're trying to solve: [brief description]
+              </div>
+            </div>
+            <button class="btn btn-ghost copy-template-btn" id="copy-template-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Copy Email Template
+            </button>
+          </div>
+        </div>
+
+        <div class="waitlist-card-right">
+          <!-- What you get -->
+          <div class="waitlist-benefits">
+            <div class="benefits-title">Design Partner Benefits</div>
+            <div class="benefit-item">
+              <span class="benefit-icon">🎯</span>
+              <div>
+                <div class="benefit-name">Hands-on onboarding</div>
+                <div class="benefit-desc">Direct setup support with Madan</div>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">💰</span>
+              <div>
+                <div class="benefit-name">Founder pricing</div>
+                <div class="benefit-desc">Locked-in early access rate ($25k pilot)</div>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">🗺</span>
+              <div>
+                <div class="benefit-name">Roadmap influence</div>
+                <div class="benefit-desc">Your use case shapes the product</div>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">📋</span>
+              <div>
+                <div class="benefit-name">Case study co-authorship</div>
+                <div class="benefit-desc">Joint thought leadership on DORA compliance</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust signals -->
+          <div class="waitlist-trust">
+            <div class="trust-signal">
+              <span class="trust-check">✓</span>
+              <span>Staging data only — no production exposure in pilot</span>
+            </div>
+            <div class="trust-signal">
+              <span class="trust-check">✓</span>
+              <span>SOC-2 in progress — architecture review available</span>
+            </div>
+            <div class="trust-signal">
+              <span class="trust-check">✓</span>
+              <span>Data sovereignty guaranteed — your data stays yours</span>
+            </div>
+            <div class="trust-signal">
+              <span class="trust-check">✓</span>
+              <span>No lock-in — full data export at any time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.waitlist-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.waitlist-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(0,212,255,0.06) 0%, rgba(59,130,246,0.04) 40%, transparent 70%);
+  pointer-events: none;
+}
+
+.waitlist-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.waitlist-badge { margin-bottom: 1.5rem; }
+.waitlist-headline {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--color-text), var(--color-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.waitlist-sub {
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+/* CTA Card */
+.waitlist-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), var(--glow-cyan);
+}
+
+.waitlist-card-left {
+  padding: 2rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.contact-method {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.contact-icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  background: var(--color-cyan-dim);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-label { font-size: 0.78rem; color: var(--color-text-dim); margin-bottom: 0.25rem; }
+.contact-email {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-cyan);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.contact-email:hover { color: #fff; }
+.contact-note { font-size: 0.72rem; color: var(--color-text-dim); }
+
+.copy-label { font-size: 0.68rem; color: var(--color-text-dim); margin-bottom: 0.5rem; }
+.email-template {
+  background: rgba(0,0,0,0.4);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--color-border);
+}
+.email-template strong { color: var(--color-text); }
+.template-body { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--color-border); color: var(--color-text-dim); }
+.copy-template-btn { font-size: 0.8rem; padding: 0.5rem 1rem; }
+
+.waitlist-card-right {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Benefits */
+.benefits-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.benefit-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.benefit-item:last-child { border-bottom: none; }
+.benefit-icon { font-size: 1.2rem; flex-shrink: 0; }
+.benefit-name { font-size: 0.88rem; font-weight: 600; color: var(--color-text); margin-bottom: 0.1rem; }
+.benefit-desc { font-size: 0.75rem; color: var(--color-text-muted); }
+
+/* Trust */
+.waitlist-trust { display: flex; flex-direction: column; gap: 0.4rem; }
+.trust-signal {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+.trust-check { color: var(--color-green); flex-shrink: 0; font-weight: 700; }
+
+@media (max-width: 768px) {
+  .waitlist-card { grid-template-columns: 1fr; }
+  .waitlist-card-left { border-right: none; border-bottom: 1px solid var(--color-border); }
+}
+</style>
+
+<script>
+  // Copy email template
+  const copyBtn = document.getElementById('copy-template-btn')!;
+  const template = `Subject: Phronesis Early Access Request
+To: madan@quirkylabs.ai
+
+Hi Madan,
+
+I'm interested in early access to Phronesis.
+
+Name: [your name]
+Organisation: [bank / FinTech name]
+Role: [your title]
+We're trying to solve: [brief description]
+
+Happy to schedule a call to discuss.`;
+
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(template);
+      const original = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+      copyBtn.style.borderColor = 'var(--color-green)';
+      copyBtn.style.color = 'var(--color-green)';
+      setTimeout(() => {
+        copyBtn.innerHTML = original;
+        copyBtn.style.borderColor = '';
+        copyBtn.style.color = '';
+      }, 2500);
+    } catch {
+      // Fallback: select text
+    }
+  });
+</script>

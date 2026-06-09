@@ -1,0 +1,184 @@
+---
+// Footer.astro
+---
+<footer class="footer">
+  <div class="footer-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="28" height="28" rx="7" fill="url(#foot-grad)"/>
+            <path d="M8 14 L14 8 L20 14 L14 20 Z" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="14" cy="14" r="2.5" fill="white"/>
+            <defs>
+              <linearGradient id="foot-grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4ff"/>
+                <stop offset="1" stop-color="#3b82f6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="footer-logo-name">Phronesis</span>
+        </a>
+        <p class="footer-tagline">The Black Box Flight Recorder for Agentic AI.</p>
+        <p class="footer-company">A product by <a href="https://quirkylabs.ai" target="_blank" rel="noopener noreferrer">QuirkyLabs.ai</a></p>
+
+        <!-- Compliance badges -->
+        <div class="footer-badges">
+          <span class="badge badge-amber">⚡ DORA-Aligned</span>
+          <span class="badge badge-blue">🛡 SR 26-2 Ready</span>
+          <span class="badge badge-cyan">🔒 SOC-2 In Progress</span>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="/#product">Overview</a>
+          <a href="/#how-it-works">How It Works</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#waitlist">Early Access</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/docs/">Documentation</a>
+          <a href="/docs/compliance/dora-article-19">DORA Guide</a>
+          <a href="/docs/compliance/sr-26-2">SR 26-2 Guide</a>
+          <a href="/docs/faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/#about">About</a>
+          <a href="mailto:madan@quirkylabs.ai">Contact</a>
+          <a href="https://github.com/madan-quirkylabs/phronesis-homepage" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="/#waitlist">Newsletter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="footer-bottom">
+      <p class="footer-legal">
+        © 2025 QuirkyLabs.ai · All rights reserved. ·
+        <a href="#">Privacy Policy</a> ·
+        <a href="#">Terms of Service</a>
+      </p>
+      <p class="footer-disclaimer">
+        Phronesis is in private beta. Contact <a href="mailto:madan@quirkylabs.ai">madan@quirkylabs.ai</a> for early access.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.footer {
+  position: relative;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-3xl) var(--space-xl);
+  overflow: hidden;
+}
+
+.footer-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(0,212,255,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.footer-brand {}
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.footer-logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+.footer-tagline {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+  font-style: italic;
+}
+.footer-company {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  margin-bottom: 1.25rem;
+}
+.footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.footer-col h4 {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.footer-col a {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.footer-col a:hover { color: var(--color-cyan); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.footer-legal, .footer-disclaimer {
+  font-size: 0.78rem;
+  color: var(--color-text-dim);
+}
+.footer-legal a, .footer-disclaimer a {
+  color: var(--color-text-dim);
+  transition: color var(--transition-fast);
+}
+.footer-legal a:hover, .footer-disclaimer a:hover { color: var(--color-cyan); }
+
+@media (max-width: 768px) {
+  .footer-top { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .footer-links { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+</style>

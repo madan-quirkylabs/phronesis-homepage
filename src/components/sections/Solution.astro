@@ -1,0 +1,269 @@
+---
+// Solution.astro — 4 pillars of the Phronesis solution
+---
+<section class="section bg-radial-blue" id="product">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">✦ The Solution</div>
+      <h2>Your AI's Black Box.<br/>Finally readable.</h2>
+      <p>Phronesis sits passively alongside your AI agents, ingesting every decision as it happens and transforming raw telemetry into structured, legally defensible evidence.</p>
+    </div>
+
+    <!-- UVP statement -->
+    <div class="uvp-banner">
+      <div class="uvp-left">
+        <div class="uvp-label mono">// Unique Value Proposition</div>
+        <blockquote class="uvp-text">
+          "Safely unblock your Agentic AI deployments. We translate unreadable AI telemetry
+          into structured, chronological audit trails — giving you the forensic evidence required
+          to confidently file a DORA incident report in <strong>under 4 hours.</strong>"
+        </blockquote>
+      </div>
+      <div class="uvp-metrics">
+        <div class="uvp-metric">
+          <span class="metric-val">3s</span>
+          <span class="metric-label">Evidence pack generation</span>
+        </div>
+        <div class="uvp-metric">
+          <span class="metric-val">4h</span>
+          <span class="metric-label">DORA window — covered</span>
+        </div>
+        <div class="uvp-metric">
+          <span class="metric-val">0</span>
+          <span class="metric-label">Code changes to your AI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 pillars -->
+    <div class="solution-grid">
+      <!-- Pillar 1 -->
+      <div class="solution-card card" id="solution-replay">
+        <div class="solution-number">01</div>
+        <div class="solution-icon">🎬</div>
+        <h3>Forensic Reasoning Replay</h3>
+        <p>Ingests standard OpenTelemetry traces and automatically translates them into a human-readable, chronological decision tree — step by step, in plain English.</p>
+        <div class="solution-example">
+          <div class="example-row">
+            <span class="mono example-time">14:01:03</span>
+            <span class="example-action">Agent started — FX Routing Workflow #4821</span>
+          </div>
+          <div class="example-row">
+            <span class="mono example-time">14:01:04</span>
+            <span class="example-action">Read: sanctions_list.pdf (cached, stale)</span>
+          </div>
+          <div class="example-row example-row--anomaly">
+            <span class="mono example-time">14:01:05</span>
+            <span class="example-action">⚠ Decision: Approved transfer based on stale data</span>
+          </div>
+        </div>
+        <div class="solution-regulation">
+          <span class="badge badge-blue">SR 26-2 — Effective Challenge Evidence</span>
+        </div>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="solution-card card" id="solution-dora">
+        <div class="solution-number">02</div>
+        <div class="solution-icon">⚡</div>
+        <h3>1-Click DORA Evidence Pack</h3>
+        <p>When an incident occurs, your CRO opens the dashboard, clicks one button, and receives a perfectly structured, regulator-ready PDF — not a frantic Slack thread.</p>
+        <div class="solution-feature-list">
+          <div class="feat-row">
+            <span class="feat-check">✓</span>
+            <span>Chronological incident timeline</span>
+          </div>
+          <div class="feat-row">
+            <span class="feat-check">✓</span>
+            <span>Root cause analysis — automated</span>
+          </div>
+          <div class="feat-row">
+            <span class="feat-check">✓</span>
+            <span>DORA Article 19 required headers</span>
+          </div>
+          <div class="feat-row">
+            <span class="feat-check">✓</span>
+            <span>Cryptographic integrity hash</span>
+          </div>
+        </div>
+        <div class="solution-regulation">
+          <span class="badge badge-amber">DORA Article 19 — Initial Notification</span>
+        </div>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="solution-card card" id="solution-ledger">
+        <div class="solution-number">03</div>
+        <div class="solution-icon">🔒</div>
+        <h3>Context-Aware Append-Only Ledger</h3>
+        <p>A high-velocity backend (Clojure/RAMA) that chains scattered agent traces into a single, tamper-evident system of record. The logs are immutable — just like a real flight recorder.</p>
+        <div class="solution-architecture">
+          <div class="arch-row">
+            <div class="arch-node">OTel Traces</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node">Event Stream</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node arch-node--highlight">Ledger</div>
+          </div>
+          <div class="arch-detail">Hash-chained · Append-only · Tamper-evident</div>
+        </div>
+        <div class="solution-regulation">
+          <span class="badge badge-cyan">SR 26-2 — System of Record</span>
+        </div>
+      </div>
+
+      <!-- Pillar 4 -->
+      <div class="solution-card card" id="solution-mirror">
+        <div class="solution-number">04</div>
+        <div class="solution-icon">🌐</div>
+        <h3>Autonomous Compliance Data Mirror</h3>
+        <p>Your data stays yours. Phronesis automatically mirrors all execution narratives to your own infrastructure — SQL databases or cheap object storage — with zero lock-in.</p>
+        <div class="solution-tiers">
+          <div class="mirror-tier">
+            <span class="tier-label">Tier 1</span>
+            <span class="tier-desc">SQL (PostgreSQL, BigQuery) — for BI dashboards</span>
+          </div>
+          <div class="mirror-tier">
+            <span class="tier-label">Tier 2</span>
+            <span class="tier-desc">NDJSON → S3/GCS — air-gapped forensics</span>
+          </div>
+        </div>
+        <div class="solution-regulation">
+          <span class="badge badge-green">Data Sovereignty Guaranteed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* UVP banner */
+.uvp-banner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-cyan);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  margin-bottom: 3rem;
+}
+.uvp-label { font-size: 0.7rem; color: var(--color-text-dim); margin-bottom: 0.5rem; }
+.uvp-text {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+}
+.uvp-text strong { color: var(--color-cyan); font-style: normal; }
+.uvp-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 140px;
+}
+.uvp-metric { text-align: right; }
+.metric-val {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-cyan);
+  display: block;
+  line-height: 1;
+}
+.metric-label {
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+}
+
+/* Solution grid */
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.solution-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.solution-number {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.solution-icon { font-size: 1.8rem; }
+.solution-card h3 { font-size: 1.15rem; }
+.solution-card p { font-size: 0.9rem; flex: 1; }
+
+.solution-example {
+  background: rgba(0,0,0,0.4);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+}
+.example-row { display: flex; gap: 0.5rem; align-items: flex-start; }
+.example-time { color: var(--color-text-dim); flex-shrink: 0; }
+.example-action { color: var(--color-text-muted); line-height: 1.4; }
+.example-row--anomaly .example-action { color: var(--color-amber); }
+
+.solution-feature-list { display: flex; flex-direction: column; gap: 0.4rem; }
+.feat-row { display: flex; gap: 0.5rem; align-items: center; font-size: 0.85rem; color: var(--color-text-muted); }
+.feat-check { color: var(--color-green); font-weight: 700; flex-shrink: 0; }
+
+.solution-architecture { background: rgba(0,0,0,0.35); border-radius: var(--radius-sm); padding: 0.75rem; }
+.arch-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.arch-node {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+}
+.arch-node--highlight { border-color: var(--color-cyan); color: var(--color-cyan); background: var(--color-cyan-dim); }
+.arch-arrow { color: var(--color-text-dim); font-size: 0.8rem; }
+.arch-detail { font-size: 0.68rem; color: var(--color-text-dim); font-family: var(--font-mono); }
+
+.solution-tiers { display: flex; flex-direction: column; gap: 0.5rem; }
+.mirror-tier {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: var(--radius-sm);
+}
+.tier-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-cyan);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.tier-desc { color: var(--color-text-muted); }
+
+.solution-regulation { margin-top: auto; }
+
+@media (max-width: 768px) {
+  .uvp-banner { grid-template-columns: 1fr; }
+  .uvp-metrics { flex-direction: row; min-width: unset; }
+  .uvp-metric { text-align: left; }
+}
+</style>

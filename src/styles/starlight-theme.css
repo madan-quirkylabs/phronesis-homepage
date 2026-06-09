@@ -1,0 +1,81 @@
+/* Phronesis custom Starlight theme overrides */
+
+:root {
+  --sl-font: 'DM Sans', system-ui, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', monospace;
+
+  /* Colors override */
+  --sl-color-accent-low:  #0a1628;
+  --sl-color-accent:      #00d4ff;
+  --sl-color-accent-high: #67e8f9;
+
+  --sl-color-white:       #e2eaf4;
+  --sl-color-gray-1:      #6b8ab0;
+  --sl-color-gray-2:      #3d5475;
+  --sl-color-gray-3:      #152a52;
+  --sl-color-gray-4:      #0f2040;
+  --sl-color-gray-5:      #0a1628;
+  --sl-color-gray-6:      #050d1a;
+  --sl-color-black:       #050d1a;
+
+  --sl-color-bg:          #050d1a;
+  --sl-color-bg-nav:      #0a1628;
+  --sl-color-bg-sidebar:  #0a1628;
+
+  --sl-color-text:        #e2eaf4;
+  --sl-color-text-accent: #00d4ff;
+
+  --sl-color-border:      rgba(0,212,255,0.12);
+
+  --sl-sidebar-width: 17rem;
+}
+
+/* Nav logo styling */
+.site-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Header */
+header.header {
+  border-bottom: 1px solid rgba(0,212,255,0.12) !important;
+  background: rgba(5,13,26,0.9) !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+/* Sidebar */
+.sidebar-pane {
+  border-right: 1px solid rgba(0,212,255,0.08) !important;
+}
+
+/* Code blocks */
+.expressive-code pre {
+  background: rgba(0,0,0,0.5) !important;
+  border: 1px solid rgba(0,212,255,0.1) !important;
+  border-radius: 10px !important;
+}
+
+/* Callout / aside */
+.starlight-aside {
+  border-radius: 10px !important;
+}
+
+/* Links */
+a:not(.site-title) {
+  color: #00d4ff !important;
+}
+a:not(.site-title):hover { color: #fff !important; }
+
+/* Content headings */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Search */
+site-search button {
+  border-color: rgba(0,212,255,0.2) !important;
+}

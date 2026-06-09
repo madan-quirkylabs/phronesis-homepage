@@ -1,0 +1,253 @@
+---
+// AnimatedTimeline.astro — OTel trace → audit trail data flow animation
+---
+<div class="timeline-viz" aria-label="How Phronesis captures AI agent decisions">
+  <!-- Step nodes -->
+  <div class="timeline-track">
+    <div class="tl-step tl-step--active" data-step="1">
+      <div class="tl-node">
+        <div class="tl-node-inner">
+          <span class="tl-node-icon">⚙</span>
+        </div>
+        <div class="tl-pulse"></div>
+      </div>
+      <div class="tl-connector">
+        <div class="tl-flow-line">
+          <div class="tl-flow-particle"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-step" data-step="2">
+      <div class="tl-node">
+        <div class="tl-node-inner">
+          <span class="tl-node-icon">📡</span>
+        </div>
+      </div>
+      <div class="tl-connector">
+        <div class="tl-flow-line">
+          <div class="tl-flow-particle" style="animation-delay: 0.4s"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-step" data-step="3">
+      <div class="tl-node">
+        <div class="tl-node-inner">
+          <span class="tl-node-icon">🔒</span>
+        </div>
+      </div>
+      <div class="tl-connector">
+        <div class="tl-flow-line">
+          <div class="tl-flow-particle" style="animation-delay: 0.8s"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-step" data-step="4">
+      <div class="tl-node tl-node--end">
+        <div class="tl-node-inner">
+          <span class="tl-node-icon">📋</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event stream display -->
+  <div class="event-stream" id="event-stream">
+    <div class="event-stream-header">
+      <span class="mono">// Phronesis Forensic Replay</span>
+      <span class="badge badge-green">● LIVE</span>
+    </div>
+    <div class="event-list" id="event-list">
+      <div class="event-item">
+        <span class="event-time">14:01:03.241</span>
+        <span class="event-tag tag-cyan">AGENT_START</span>
+        <span class="event-desc">FX Routing Agent — initiated workflow #4821</span>
+      </div>
+      <div class="event-item">
+        <span class="event-time">14:01:03.489</span>
+        <span class="event-tag tag-blue">TOOL_CALL</span>
+        <span class="event-desc">ReadDocument("sanctions_list_v2.pdf") → 847KB</span>
+      </div>
+      <div class="event-item">
+        <span class="event-time">14:01:04.112</span>
+        <span class="event-tag tag-blue">TOOL_CALL</span>
+        <span class="event-desc">CheckBalance(acct: "FX-EU-0029") → €2.4M</span>
+      </div>
+      <div class="event-item">
+        <span class="event-time">14:01:04.891</span>
+        <span class="event-tag tag-cyan">LLM_INFERENCE</span>
+        <span class="event-desc">Decision: "Counterparty cleared. Proceed with transfer."</span>
+      </div>
+      <div class="event-item">
+        <span class="event-time">14:01:05.033</span>
+        <span class="event-tag tag-amber">ANOMALY</span>
+        <span class="event-desc">Sanctions list was cached (stale 4h 12m) — not live API</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.timeline-viz {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+/* Track */
+.timeline-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  min-width: 56px;
+}
+
+.tl-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Node */
+.tl-node {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tl-node-inner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-surface-2);
+  border: 1.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all var(--transition-base);
+  z-index: 1;
+}
+.tl-step--active .tl-node-inner {
+  border-color: var(--color-cyan);
+  background: var(--color-cyan-dim);
+  box-shadow: 0 0 20px rgba(0,212,255,0.3);
+}
+.tl-node--end .tl-node-inner {
+  border-color: var(--color-green);
+  background: var(--color-green-dim);
+}
+
+.tl-pulse {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-cyan);
+  animation: pulse-glow 2s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+/* Connector */
+.tl-connector {
+  width: 2px;
+  height: 48px;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-border);
+}
+.tl-flow-line {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.tl-flow-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  box-shadow: 0 0 8px var(--color-cyan);
+  left: -2px;
+  animation: flow-down 2s linear infinite;
+}
+
+@keyframes flow-down {
+  0%   { top: -6px; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Event stream */
+.event-stream {
+  background: rgba(0,0,0,0.35);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  border: 1px solid rgba(0,212,255,0.08);
+  overflow: hidden;
+}
+.event-stream-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.event-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 0.5rem;
+  align-items: start;
+  font-size: 0.72rem;
+  animation: slide-up 0.4s ease both;
+}
+.event-item:nth-child(1) { animation-delay: 0ms; }
+.event-item:nth-child(2) { animation-delay: 100ms; }
+.event-item:nth-child(3) { animation-delay: 200ms; }
+.event-item:nth-child(4) { animation-delay: 300ms; }
+.event-item:nth-child(5) { animation-delay: 400ms; }
+
+.event-time {
+  font-family: var(--font-mono);
+  color: var(--color-text-dim);
+  white-space: nowrap;
+}
+.event-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.tag-cyan  { background: var(--color-cyan-dim);  color: var(--color-cyan);  border: 1px solid rgba(0,212,255,0.2); }
+.tag-blue  { background: var(--color-blue-dim);  color: var(--color-blue);  border: 1px solid rgba(59,130,246,0.2); }
+.tag-amber { background: var(--color-amber-dim); color: var(--color-amber); border: 1px solid rgba(245,158,11,0.2); }
+.event-desc { color: var(--color-text-muted); line-height: 1.4; }
+
+@media (max-width: 640px) {
+  .timeline-viz { grid-template-columns: 1fr; }
+  .timeline-track { flex-direction: row; min-width: unset; }
+  .tl-connector { width: 48px; height: 2px; }
+}
+</style>

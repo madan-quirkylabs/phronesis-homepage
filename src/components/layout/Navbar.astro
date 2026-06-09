@@ -1,0 +1,270 @@
+---
+// Navbar.astro — Fixed glassmorphism navigation
+---
+<header class="navbar" id="navbar">
+  <div class="navbar-inner container">
+    <!-- Logo -->
+    <a href="/" class="navbar-logo" aria-label="Phronesis home">
+      <div class="logo-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="7" fill="url(#logo-grad)"/>
+          <path d="M8 14 L14 8 L20 14 L14 20 Z" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="14" cy="14" r="2.5" fill="white"/>
+          <path d="M14 8 L14 5" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <path d="M20 14 L23 14" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <path d="M14 20 L14 23" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <path d="M8 14 L5 14" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <defs>
+            <linearGradient id="logo-grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4ff"/>
+              <stop offset="1" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Phronesis</span>
+        <span class="logo-byline">by QuirkyLabs.ai</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="navbar-nav hide-mobile" aria-label="Main navigation">
+      <a href="/#product">Product</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/docs/">Docs</a>
+      <a href="/#about">About</a>
+    </nav>
+
+    <!-- Right side -->
+    <div class="navbar-right">
+      <!-- Language placeholder -->
+      <button class="lang-switcher" title="English (additional languages coming soon)" disabled aria-label="Language selector">
+        <span class="lang-flag">🇬🇧</span>
+        <span class="lang-code hide-mobile">EN</span>
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+          <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </button>
+
+      <a href="/#waitlist" class="btn btn-primary navbar-cta" id="nav-cta">
+        Request Early Access
+      </a>
+
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <nav>
+      <a href="/#product">Product</a>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/docs/">Docs</a>
+      <a href="/#about">About</a>
+      <a href="/#waitlist" class="btn btn-primary">Request Early Access</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.navbar.scrolled {
+  background: rgba(5, 13, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(0, 212, 255, 0.1), 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 1.5rem;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.logo-icon {
+  animation: float 5s ease-in-out infinite;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+.logo-byline {
+  font-size: 0.65rem;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+/* Nav Links */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.navbar-nav a {
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+.navbar-nav a:hover {
+  color: var(--color-text);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Right side */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Lang switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: not-allowed;
+  opacity: 0.7;
+  font-family: var(--font-heading);
+  transition: all var(--transition-fast);
+}
+
+.navbar-cta {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.88rem;
+}
+
+/* Mobile toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 1px;
+  transition: all var(--transition-base);
+}
+.menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+/* Mobile Nav */
+.mobile-nav {
+  display: none;
+  background: rgba(5, 13, 26, 0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow);
+}
+.mobile-nav.open {
+  max-height: 400px;
+}
+.mobile-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mobile-nav a {
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+.mobile-nav a:hover { color: var(--color-text); background: rgba(255,255,255,0.05); }
+.mobile-nav .btn { margin-top: 0.5rem; justify-content: center; }
+
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .mobile-nav { display: block; }
+  .navbar-cta { display: none; }
+}
+</style>
+
+<script>
+  // Scroll effect
+  const navbar = document.getElementById('navbar')!;
+  const handleScroll = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // Mobile menu
+  const toggle = document.getElementById('menu-toggle')!;
+  const mobileNav = document.getElementById('mobile-nav')!;
+  toggle.addEventListener('click', () => {
+    const open = toggle.classList.toggle('open');
+    mobileNav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    mobileNav.setAttribute('aria-hidden', String(!open));
+  });
+
+  // Close on link click
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      mobileNav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+    });
+  });
+</script>

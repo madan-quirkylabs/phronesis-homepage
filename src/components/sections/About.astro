@@ -1,0 +1,166 @@
+---
+// About.astro
+---
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-layout">
+      <!-- Left: Mission -->
+      <div class="about-mission">
+        <div class="section-label">✦ Our Mission</div>
+        <h2>AI should be accountable.<br/>Not a black box that gets banks fined.</h2>
+        <p>
+          The financial system is undergoing a once-in-a-generation transformation. 
+          Agentic AI has the power to save billions in operational costs and eliminate human error in critical workflows. 
+          But that promise collapses the moment a regulator asks "why did the AI do that?" and no one can answer.
+        </p>
+        <p>
+          We built Phronesis because we believe the gap is not a technical one — it's an infrastructure one. 
+          The tools to safely deploy AI at enterprise scale already exist. 
+          What was missing was the <strong>accountability layer</strong> that makes those deployments legally defensible.
+        </p>
+        <p>
+          Just like the aviation industry didn't abandon flight when crashes happened — 
+          they built better recorders — the financial industry doesn't have to choose between AI innovation and regulatory compliance. 
+          Phronesis is that recorder.
+        </p>
+      </div>
+
+      <!-- Right: Founder / Company -->
+      <div class="about-right">
+        <!-- The team card -->
+        <div class="about-card card">
+          <div class="about-avatar">M</div>
+          <div class="about-info">
+            <div class="about-name">Madan</div>
+            <div class="about-title">Founder · QuirkyLabs.ai</div>
+            <div class="about-location mono">📍 Bengaluru, India</div>
+          </div>
+          <a href="mailto:madan@quirkylabs.ai" class="btn btn-ghost about-contact-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            madan@quirkylabs.ai
+          </a>
+        </div>
+
+        <!-- Technical credibility -->
+        <div class="tech-cred card">
+          <div class="tech-cred-label mono">// Technical Architecture</div>
+          <div class="tech-stack">
+            <div class="tech-item">
+              <span class="tech-icon">⚙</span>
+              <div>
+                <div class="tech-name">Clojure / RAMA</div>
+                <div class="tech-desc">High-velocity event-stream backend, purpose-built for ledger semantics</div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">📡</span>
+              <div>
+                <div class="tech-name">OpenTelemetry Native</div>
+                <div class="tech-desc">Ingests CNCF standard traces — no custom SDK, zero agent changes</div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">🔒</span>
+              <div>
+                <div class="tech-name">Cryptographic Integrity</div>
+                <div class="tech-desc">Hash-chained append-only ledger — tamper-evident by design</div>
+              </div>
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">🌐</span>
+              <div>
+                <div class="tech-name">DORA/SR 26-2 Alignment</div>
+                <div class="tech-desc">Structured output maps directly to regulatory reporting requirements</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="company-status card">
+          <div class="status-items">
+            <div class="status-item">
+              <span class="status-key mono">Stage</span>
+              <span class="badge badge-amber">Private Beta</span>
+            </div>
+            <div class="status-item">
+              <span class="status-key mono">SOC-2</span>
+              <span class="badge badge-cyan">In Progress</span>
+            </div>
+            <div class="status-item">
+              <span class="status-key mono">Looking for</span>
+              <span class="badge badge-green">Design Partners</span>
+            </div>
+            <div class="status-item">
+              <span class="status-key mono">GitHub</span>
+              <a href="https://github.com/madan-quirkylabs" class="badge badge-blue" target="_blank" rel="noopener noreferrer">madan-quirkylabs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-mission .section-label { margin-bottom: 1.25rem; }
+.about-mission h2 { margin-bottom: 1.5rem; }
+.about-mission p { font-size: 1rem; margin-bottom: 1rem; }
+.about-mission p:last-child { margin-bottom: 0; }
+.about-mission strong { color: var(--color-cyan); font-weight: 600; }
+
+.about-right { display: flex; flex-direction: column; gap: 1rem; }
+
+/* Avatar card */
+.about-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.about-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-bg);
+  flex-shrink: 0;
+}
+.about-info { flex: 1; }
+.about-name { font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: var(--color-text); }
+.about-title { font-size: 0.8rem; color: var(--color-text-muted); }
+.about-location { font-size: 0.72rem; color: var(--color-text-dim); margin-top: 0.15rem; }
+.about-contact-btn { font-size: 0.8rem; padding: 0.4rem 0.9rem; white-space: nowrap; }
+
+/* Tech stack */
+.tech-cred {}
+.tech-cred-label { font-size: 0.68rem; color: var(--color-text-dim); margin-bottom: 0.75rem; }
+.tech-stack { display: flex; flex-direction: column; gap: 0.6rem; }
+.tech-item { display: flex; gap: 0.75rem; align-items: flex-start; }
+.tech-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+.tech-name { font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: var(--color-text); margin-bottom: 0.15rem; }
+.tech-desc { font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.45; }
+
+/* Status */
+.company-status {}
+.status-items { display: flex; flex-direction: column; gap: 0.5rem; }
+.status-item { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; font-size: 0.8rem; }
+.status-key { font-size: 0.68rem; color: var(--color-text-dim); }
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+</style>
