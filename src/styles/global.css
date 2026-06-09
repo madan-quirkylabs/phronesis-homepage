@@ -50,10 +50,10 @@
   --space-4xl:  8rem;
 
   /* Border Radius */
-  --radius-sm:  6px;
-  --radius-md:  10px;
-  --radius-lg:  16px;
-  --radius-xl:  24px;
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
   --radius-full: 9999px;
 
   /* Shadows / Glows */
