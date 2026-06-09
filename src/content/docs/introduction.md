@@ -47,7 +47,7 @@ Ingests your existing [OpenTelemetry (OTel)](https://opentelemetry.io/) traces a
 When an incident occurs, generates a perfectly structured, regulator-ready incident report in seconds — not the 3+ days it currently takes engineers to manually reconstruct logs.
 
 ### 3. Context-Aware Append-Only Ledger
-A high-velocity backend (built on **Clojure/RAMA**) that chains scattered agent traces into a single, tamper-evident system of record. Hash-chained. Immutable. Cryptographically verifiable.
+A high-velocity event-streaming backend that chains scattered agent traces into a single, tamper-evident system of record. Hash-chained. Immutable. Cryptographically verifiable.
 
 ### 4. Autonomous Compliance Data Mirror
 Automatically mirrors all execution narratives to your own infrastructure (SQL databases or NDJSON to object storage), ensuring **data sovereignty** and zero vendor lock-in.

@@ -1,6 +1,6 @@
 ---
 title: Append-Only Ledger
-description: Technical deep-dive into the Phronesis hash-chained, append-only ledger built on Clojure/RAMA for tamper-evident AI audit trail storage.
+description: Technical deep-dive into the Phronesis hash-chained, append-only ledger for tamper-evident AI audit trail storage.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -20,15 +20,16 @@ This means:
 
 This is the same design principle used in financial ledgers (double-entry bookkeeping) and blockchain systems — applied to AI agent event streams.
 
-## Architecture: Clojure / RAMA
+## High-Velocity Architecture
 
-The ledger backend is built on [RAMA](https://redplanetlabs.com/), a distributed programming platform created by Nathan Marz (creator of Apache Storm). Phronesis chose this stack for three reasons:
+The ledger backend is built from the ground up for extreme performance. Phronesis chose this architecture for three reasons:
 
 | Property | Why It Matters |
 |---|---|
-| **Event-stream native** | RAMA's programming model is built around immutable, append-only event logs — exactly matching ledger semantics |
-| **Extreme throughput** | RAMA topologies handle millions of events per second with consistent low latency — critical for real-time ingestion of high-frequency agent traces |
-| **Clojure semantics** | Clojure's immutable data structures and functional purity eliminate an entire class of concurrency bugs in the ingestion pipeline |
+| **Event-stream native** | Our programming model is built around immutable, append-only event logs — exactly matching ledger semantics |
+| **Extreme throughput** | Our topologies handle millions of events per second with consistent low latency — critical for real-time ingestion of high-frequency agent traces |
+| **Immutable semantics** | Immutable data structures and functional purity eliminate an entire class of concurrency bugs in the ingestion pipeline |
+
 
 ## Hash-Chaining Mechanism
 
@@ -118,7 +119,7 @@ NDJSON archives can be "rehydrated" into **ephemeral, air-gapped Shadow Clusters
 - **Encryption at rest**: AES-256-GCM for all stored events
 - **Encryption in transit**: TLS 1.3 for all ingestion and API traffic
 - **Access control**: Role-based (CRO dashboard vs. engineering API vs. read-only auditor)
-- **Multi-tenancy**: Complete data isolation per customer (separate RAMA topology per production tenant)
+- **Multi-tenancy**: Complete data isolation per customer (separate backend topology per production tenant)
 - **Key management**: Customer-managed encryption keys (CMEK) available on Enterprise tier
 
 ---
