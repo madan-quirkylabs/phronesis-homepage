@@ -6,20 +6,20 @@ export default defineConfig({
   output: 'static',
   integrations: [
     starlight({
-      title: 'Phronesis Docs',
+      title: 'Causality Docs',
       description: 'The Black Box Flight Recorder for Agentic AI — Documentation',
       logo: {
         src: './src/assets/logo.svg',
-        alt: 'Phronesis',
+        alt: 'Causality',
       },
       social: [
-        { icon: 'github', label: 'GitHub', href: 'https://github.com/madan-quirkylabs/phronesis-homepage' },
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/madan-quirkylabs/causality-homepage' },
       ],
       sidebar: [
         {
           label: 'Getting Started',
           items: [
-            { label: 'What is Phronesis?', slug: 'introduction' },
+            { label: 'What is Causality?', slug: 'introduction' },
             { label: 'Connecting your OTel Exporter', slug: 'getting-started' },
           ],
         },
@@ -64,7 +64,7 @@ export default defineConfig({
         },
       ],
       editLink: {
-        baseUrl: 'https://github.com/madan-quirkylabs/phronesis-homepage/edit/main/',
+        baseUrl: 'https://github.com/madan-quirkylabs/causality-homepage/edit/main/',
       },
     }),
   ],

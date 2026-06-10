@@ -1,15 +1,15 @@
 ---
-title: What is Phronesis?
-description: Phronesis is the Black Box Flight Recorder for Agentic AI — built to help banks and regulated financial institutions meet DORA and SR 26-2 requirements without freezing their AI deployments.
+title: What is Causality?
+description: Causality is the Black Box Flight Recorder for Agentic AI — built to help banks and regulated financial institutions meet DORA and SR 26-2 requirements without freezing their AI deployments.
 ---
 
 import { Aside, Badge, Card, CardGrid } from '@astrojs/starlight/components';
 
-# What is Phronesis?
+# What is Causality?
 
-**Phronesis** is the **Black Box Flight Recorder for Agentic AI.**
+**Causality** is the **Black Box Flight Recorder for Agentic AI.**
 
-Just like a flight recorder doesn't fly the airplane — it sits quietly in the background, capturing every decision made by the autopilot, surviving any crash, and providing investigators with the exact, undeniable chronology of what happened — Phronesis does the same for your AI agents.
+Just like a flight recorder doesn't fly the airplane — it sits quietly in the background, capturing every decision made by the autopilot, surviving any crash, and providing investigators with the exact, undeniable chronology of what happened — Causality does the same for your AI agents.
 
 ## The Problem It Solves
 
@@ -34,9 +34,9 @@ Under DORA Article 5(4), an AI agent hallucination that triggers an unauthorized
 Failure to comply can result in administrative fines of up to **€1,000,000 personally** for board members in certain member states.
 </Aside>
 
-## What Phronesis Does
+## What Causality Does
 
-Phronesis **does not build AI agents**. It builds the safety infrastructure that makes it legally possible for enterprises to turn their AI agents on.
+Causality **does not build AI agents**. It builds the safety infrastructure that makes it legally possible for enterprises to turn their AI agents on.
 
 It does this through four core capabilities:
 
@@ -66,7 +66,7 @@ Automatically mirrors all execution narratives to your own infrastructure (SQL d
 
 A flight recorder doesn't prevent the plane from crashing. But when a catastrophic incident occurs, it survives the crash and provides the exact, undeniable chronology of what the pilot did.
 
-For banks deploying AI, Phronesis is that recorder.
+For banks deploying AI, Causality is that recorder.
 
 ---
 
@@ -77,6 +77,6 @@ For banks deploying AI, Phronesis is that recorder.
     Start ingesting AI agent traces in minutes. [Getting Started →](/docs/getting-started)
   </Card>
   <Card title="DORA Compliance Guide" icon="document">
-    Learn how Phronesis maps to DORA Article 19. [Read the guide →](/docs/compliance/dora-article-19)
+    Learn how Causality maps to DORA Article 19. [Read the guide →](/docs/compliance/dora-article-19)
   </Card>
 </CardGrid>

@@ -1,16 +1,16 @@
 ---
 title: DORA Article 19 Requirements
-description: How Phronesis maps to the EU Digital Operational Resilience Act (DORA) Article 19 incident reporting requirements, including the 4-hour initial notification window.
+description: How Causality maps to the EU Digital Operational Resilience Act (DORA) Article 19 incident reporting requirements, including the 4-hour initial notification window.
 ---
 
 import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
 # DORA Article 19: ICT-Related Incident Reporting
 
-The EU **Digital Operational Resilience Act (DORA)**, effective January 17, 2025, establishes binding requirements for ICT-related incident reporting in financial services. This page explains how Phronesis enables compliance with the critical Article 19 reporting obligations — particularly the **4-hour initial notification window**.
+The EU **Digital Operational Resilience Act (DORA)**, effective January 17, 2025, establishes binding requirements for ICT-related incident reporting in financial services. This page explains how Causality enables compliance with the critical Article 19 reporting obligations — particularly the **4-hour initial notification window**.
 
 <Aside type="caution" title="This is not legal advice">
-This documentation reflects Phronesis's technical interpretation of DORA requirements for product design purposes. You should consult your legal and compliance team to determine how DORA applies to your specific institution.
+This documentation reflects Causality's technical interpretation of DORA requirements for product design purposes. You should consult your legal and compliance team to determine how DORA applies to your specific institution.
 </Aside>
 
 ## DORA Article 19: The Obligation
@@ -38,22 +38,22 @@ Under DORA's framework, an AI agent hallucination or unauthorized action that ca
 - A document processing agent makes a legally binding commitment based on an incorrect interpretation
 - An automated decision system bypasses a required human approval step
 
-## How Phronesis Enables 4-Hour Compliance
+## How Causality Enables 4-Hour Compliance
 
-Phronesis reduces the incident response workflow from **days to seconds**:
+Causality reduces the incident response workflow from **days to seconds**:
 
 ```
-WITHOUT PHRONESIS                    WITH PHRONESIS
+WITHOUT CAUSALITY                    WITH CAUSALITY
 ─────────────────────────────────    ─────────────────────────────────
 Hour 0:  Incident detected           Hour 0:  Incident detected
-Hour 1:  Engineers start digging     Hour 0:  Phronesis flags anomaly
+Hour 1:  Engineers start digging     Hour 0:  Causality flags anomaly
 Hour 4:  DEADLINE MISSED ⚠           Hour 0:  Forensic Replay generated
 Hour 12: Still searching logs        Hour 0:  DORA Pack ready → SUBMIT ✓
 Hour 72: Partial reconstruction      Hour 4:  Intermediate report prep begins
 Day 5+:  Word doc submitted          Hour 72: Final report (deep analysis)
 ```
 
-### Phronesis 1-Click DORA Evidence Pack
+### Causality 1-Click DORA Evidence Pack
 
 When an anomaly is detected, your CRO's dashboard shows an alert. They click **"Generate DORA Evidence Pack"** and receive a structured report containing:
 
@@ -66,9 +66,9 @@ When an anomaly is detected, your CRO's dashboard shows an alert. They click **"
 
 ## Article 19 Field Mapping
 
-The Phronesis DORA Evidence Pack pre-populates the following required notification fields:
+The Causality DORA Evidence Pack pre-populates the following required notification fields:
 
-| DORA Article 19 Field | Phronesis Source |
+| DORA Article 19 Field | Causality Source |
 |---|---|
 | Date and time of detection | `span.startTimeUnixNano` from anomaly span |
 | Date and time of classification | Dashboard anomaly classification timestamp |
@@ -80,12 +80,12 @@ The Phronesis DORA Evidence Pack pre-populates the following required notificati
 | Measures taken | Configurable response playbook entries |
 
 <Aside type="note" title="Human review required">
-Phronesis generates a structured evidence pack. A qualified person at your institution must review, validate, and submit the actual notification to the Competent Authority. Phronesis does not submit to regulators on your behalf.
+Causality generates a structured evidence pack. A qualified person at your institution must review, validate, and submit the actual notification to the Competent Authority. Causality does not submit to regulators on your behalf.
 </Aside>
 
 ## Classification Thresholds
 
-DORA defines a "major incident" using thresholds set by the European Supervisory Authorities (ESAs). Phronesis's anomaly engine helps you determine whether a threshold has been crossed by capturing:
+DORA defines a "major incident" using thresholds set by the European Supervisory Authorities (ESAs). Causality's anomaly engine helps you determine whether a threshold has been crossed by capturing:
 
 - **Client impact**: Number of affected users, transaction count, monetary value
 - **Reputational risk indicators**: Unauthorized external communications, data exposure
@@ -94,7 +94,7 @@ DORA defines a "major incident" using thresholds set by the European Supervisory
 
 ## Audit Trail Requirements
 
-DORA Article 13 also requires financial entities to maintain **logs and audit trails** of ICT incidents. The Phronesis append-only ledger directly satisfies this requirement:
+DORA Article 13 also requires financial entities to maintain **logs and audit trails** of ICT incidents. The Causality append-only ledger directly satisfies this requirement:
 
 - ✓ **Immutable**: Hash-chained records cannot be altered without detection
 - ✓ **Complete**: All agent decisions captured from OTel ingestion
@@ -105,17 +105,17 @@ DORA Article 13 also requires financial entities to maintain **logs and audit tr
 
 ## Frequently Asked Questions
 
-**Q: Will regulators accept Phronesis-generated evidence as sufficient for DORA notification?**
+**Q: Will regulators accept Causality-generated evidence as sufficient for DORA notification?**
 
-A: Phronesis is designed to provide the exact structured evidence that DORA Article 19 specifies. Our regulatory architecture was designed in consultation with DORA compliance experts. However, the sufficiency of any evidence is ultimately determined by your Competent Authority. We recommend discussing this with your legal team and proactively sharing the Phronesis architecture with your supervisor during the pilot phase.
+A: Causality is designed to provide the exact structured evidence that DORA Article 19 specifies. Our regulatory architecture was designed in consultation with DORA compliance experts. However, the sufficiency of any evidence is ultimately determined by your Competent Authority. We recommend discussing this with your legal team and proactively sharing the Causality architecture with your supervisor during the pilot phase.
 
-**Q: Does Phronesis need to be on an approved vendor list before we can use it?**
+**Q: Does Causality need to be on an approved vendor list before we can use it?**
 
 A: For the Design Partner Pilot (staging data only, $25k flat fee), the data sensitivity is significantly reduced. Many banks can proceed with a vendor risk assessment rather than full approved-vendor-list inclusion. For production deployment, a formal vendor risk assessment will be required.
 
-**Q: Can we use Phronesis evidence for the Intermediate and Final reports as well?**
+**Q: Can we use Causality evidence for the Intermediate and Final reports as well?**
 
-A: Yes. The same Forensic Replay and ledger data that powers the initial notification can be expanded for the 72-hour intermediate report and 1-month final report. Phronesis's dashboard supports exporting enriched versions of the same incident data at each stage.
+A: Yes. The same Forensic Replay and ledger data that powers the initial notification can be expanded for the 72-hour intermediate report and 1-month final report. Causality's dashboard supports exporting enriched versions of the same incident data at each stage.
 
 ---
 

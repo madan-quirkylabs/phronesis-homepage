@@ -1,13 +1,13 @@
 ---
 title: Append-Only Ledger
-description: Technical deep-dive into the Phronesis hash-chained, append-only ledger for tamper-evident AI audit trail storage.
+description: Technical deep-dive into the Causality hash-chained, append-only ledger for tamper-evident AI audit trail storage.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 
 # The Context-Aware Append-Only Ledger
 
-The ledger is the heart of Phronesis. It is the immutable, tamper-evident system of record that transforms fragmented AI telemetry into a defensible chain of evidence.
+The ledger is the heart of Causality. It is the immutable, tamper-evident system of record that transforms fragmented AI telemetry into a defensible chain of evidence.
 
 ## Design Philosophy
 
@@ -22,7 +22,7 @@ This is the same design principle used in financial ledgers (double-entry bookke
 
 ## High-Velocity Architecture
 
-The ledger backend is built from the ground up for extreme performance. Phronesis chose this architecture for three reasons:
+The ledger backend is built from the ground up for extreme performance. Causality chose this architecture for three reasons:
 
 | Property | Why It Matters |
 |---|---|
@@ -33,7 +33,7 @@ The ledger backend is built from the ground up for extreme performance. Phronesi
 
 ## Hash-Chaining Mechanism
 
-Every event written to the Phronesis ledger contains a cryptographic proof of integrity:
+Every event written to the Causality ledger contains a cryptographic proof of integrity:
 
 ```
 Event N:
@@ -60,7 +60,7 @@ Genesis → Event 1 → Event 2 → ... → Event N
 If any historical record is altered, the hash chain breaks at that point — producing a detectable integrity violation.
 
 <Aside type="note" title="Audit verification">
-Phronesis exposes a verification API endpoint that allows internal auditors or external validators to independently verify the integrity of any trace sequence. The verification algorithm is open-source and does not require trusting Phronesis infrastructure.
+Causality exposes a verification API endpoint that allows internal auditors or external validators to independently verify the integrity of any trace sequence. The verification algorithm is open-source and does not require trusting Causality infrastructure.
 </Aside>
 
 ## Materialized Views
@@ -87,7 +87,7 @@ A pre-structured snapshot of every event relevant to DORA Article 19 reporting, 
 All ledger data is automatically mirrored to your own infrastructure via the **Autonomous Compliance Data Mirror**:
 
 ```
-Phronesis Ledger (Hot)
+Causality Ledger (Hot)
     │
     ├── Tier 1 Mirror: SQL (PostgreSQL / BigQuery)
     │   └── Real-time sync via CDC
@@ -99,7 +99,7 @@ Phronesis Ledger (Hot)
 ```
 
 <Aside type="tip" title="Shadow Clusters">
-NDJSON archives can be "rehydrated" into **ephemeral, air-gapped Shadow Clusters** — enabling you to run complex forensic LLM analytics locally, for free, entirely outside Phronesis cloud infrastructure. This is particularly important for Quant funds and high-security institutions.
+NDJSON archives can be "rehydrated" into **ephemeral, air-gapped Shadow Clusters** — enabling you to run complex forensic LLM analytics locally, for free, entirely outside Causality cloud infrastructure. This is particularly important for Quant funds and high-security institutions.
 </Aside>
 
 ## Performance Characteristics

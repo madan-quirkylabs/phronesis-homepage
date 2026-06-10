@@ -1,9 +1,9 @@
-# StoryBrand Messaging Overhaul v2 — Phronesis Homepage
+# StoryBrand Messaging Overhaul v2 — Causality Homepage
 
 ## The Core Narrative
 
 - **The Hero:** The Builder (Head of AI / CTO / Engineering Lead).
-- **The Guide:** Phronesis.
+- **The Guide:** Causality.
 - **The Controller:** The Compliance Team / Risk Committee / Regulators (they need to be satisfied, but they are not the enemy).
 - **The Villain:** The inherent opacity and unpredictability of complex, multi-agent AI systems. ("Too many AI micro-agents getting into the decision-making process, you have to make sure not one of them deviates.")
 - **The Stakes (Risk of Inaction):** Competitors are deploying AI in production and capturing ROI, while you are stuck in sandbox purgatory waiting for governance approval.
@@ -18,7 +18,7 @@
 
 ### 1. Hero — `Hero.astro`
 - **Headline:** Keep "Your AI is ready. Your evidence isn't." (It's punchy and sets the exact tension).
-- **Sub-headline (New):** "The exact evidence your compliance team needs, so you can move your AI forward. Phronesis sits passively alongside your agents, translating complex decisions into the structured audit trails regulators demand."
+- **Sub-headline (New):** "The exact evidence your compliance team needs, so you can move your AI forward. Causality sits passively alongside your agents, translating complex decisions into the structured audit trails regulators demand."
 - **CTAs:** Change secondary CTA to "See How Simple It Is".
 
 ### 2. Who It's For — `CustomerSegments.astro` (Moving to position 2)
@@ -45,7 +45,7 @@
 
 ### 5. How It Works — `HowItWorks.astro`
 - **Action:** Emphasize "Out of the Box" and zero friction. Reduce to 3 simple steps.
-- **Step 1: Connect:** "Point your existing monitoring to Phronesis. No code changes to your agents. Out-of-the-box integration." (Remove the complex YAML code block).
+- **Step 1: Connect:** "Point your existing monitoring to Causality. No code changes to your agents. Out-of-the-box integration." (Remove the complex YAML code block).
 - **Step 2: Monitor:** "Every decision is automatically captured and structured without any manual intervention." (Combine current steps 2 & 3).
 - **Step 3: Respond:** "When asked for an audit trail, click once. The evidence is ready."
 

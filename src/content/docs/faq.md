@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Questions
-description: Common questions about Phronesis — the Black Box Flight Recorder for Agentic AI.
+description: Common questions about Causality — the Black Box Flight Recorder for Agentic AI.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -20,13 +20,13 @@ Unlike traditional AI that answers a single question, agentic systems make seque
 
 ---
 
-**Q: Does Phronesis change how my AI agents work?**
+**Q: Does Causality change how my AI agents work?**
 
-No. Phronesis is a **passive interceptor**. Your AI agents continue to run exactly as they do today. You simply route a copy of their existing [OpenTelemetry](https://opentelemetry.io/) telemetry to our ingestion endpoint. Zero code changes to your AI.
+No. Causality is a **passive interceptor**. Your AI agents continue to run exactly as they do today. You simply route a copy of their existing [OpenTelemetry](https://opentelemetry.io/) telemetry to our ingestion endpoint. Zero code changes to your AI.
 
 ---
 
-**Q: What AI frameworks does Phronesis support?**
+**Q: What AI frameworks does Causality support?**
 
 Any framework that emits OpenTelemetry traces using the [GenAI Semantic Conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/). This includes LangChain, LlamaIndex, Semantic Kernel, Autogen, and custom agent implementations. See the [Getting Started guide](/docs/getting-started) for details.
 
@@ -34,7 +34,7 @@ Any framework that emits OpenTelemetry traces using the [GenAI Semantic Conventi
 
 **Q: What if my AI provider (e.g., Azure OpenAI) doesn't expose reasoning traces?**
 
-Phronesis captures what's available via OTel. For closed-box LLM APIs that don't expose chain-of-thought, Phronesis captures the decision input/output boundary (what went in, what came out, and what happened next). This is typically sufficient for DORA initial notification purposes. For deeper forensics, we recommend implementing OTel instrumentation at your tool call and retrieval boundaries.
+Causality captures what's available via OTel. For closed-box LLM APIs that don't expose chain-of-thought, Causality captures the decision input/output boundary (what went in, what came out, and what happened next). This is typically sufficient for DORA initial notification purposes. For deeper forensics, we recommend implementing OTel instrumentation at your tool call and retrieval boundaries.
 
 ---
 
@@ -42,7 +42,7 @@ Phronesis captures what's available via OTel. For closed-box LLM APIs that don't
 
 **Q: How does the Design Partner Pilot work?**
 
-The Design Partner Pilot is a **$25,000 flat fee, 60-day engagement** on staging data only. We onboard your team, connect your OTel exporter to a staging Phronesis environment, and together generate at least one sample DORA Evidence Pack on simulated agent traces. If we successfully demonstrate value, you can convert to a production license. If not, you owe nothing beyond the $25k.
+The Design Partner Pilot is a **$25,000 flat fee, 60-day engagement** on staging data only. We onboard your team, connect your OTel exporter to a staging Causality environment, and together generate at least one sample DORA Evidence Pack on simulated agent traces. If we successfully demonstrate value, you can convert to a production license. If not, you owe nothing beyond the $25k.
 
 Contact [madan@quirkylabs.ai](mailto:madan@quirkylabs.ai) to start the conversation.
 
@@ -54,7 +54,7 @@ By design, the pilot uses staging data only — meaning no production telemetry 
 
 ---
 
-**Q: When will Phronesis have SOC-2 Type II certification?**
+**Q: When will Causality have SOC-2 Type II certification?**
 
 SOC-2 Type II is in progress. We anticipate completion within 12 months. In the interim, we provide:
 - A detailed security architecture whitepaper
@@ -82,21 +82,21 @@ OpenTelemetry is a CNCF open-source observability framework that has become the 
 
 ---
 
-**Q: How much additional latency does Phronesis add to our AI agents?**
+**Q: How much additional latency does Causality add to our AI agents?**
 
-Zero latency on the agent's critical path. Phronesis ingestion is asynchronous — traces are sent via an OTel `BatchSpanProcessor` in a background thread. The agent does not wait for Phronesis to acknowledge the trace before continuing. The ingestion pipeline adds &lt;50ms to trace delivery (P99), which has no impact on agent response time.
+Zero latency on the agent's critical path. Causality ingestion is asynchronous — traces are sent via an OTel `BatchSpanProcessor` in a background thread. The agent does not wait for Causality to acknowledge the trace before continuing. The ingestion pipeline adds &lt;50ms to trace delivery (P99), which has no impact on agent response time.
 
 ---
 
 **Q: Where is our data stored?**
 
-During the pilot: in an isolated Phronesis staging environment in your preferred cloud region (AWS, GCP, or Azure).
+During the pilot: in an isolated Causality staging environment in your preferred cloud region (AWS, GCP, or Azure).
 
-In production: in a dedicated, single-tenant Phronesis environment. Your data is never co-mingled with other tenants. All data is also mirrored to your own infrastructure (SQL or object storage) via the [Autonomous Compliance Data Mirror](/docs/architecture/append-only-ledger#data-retention--mirroring).
+In production: in a dedicated, single-tenant Causality environment. Your data is never co-mingled with other tenants. All data is also mirrored to your own infrastructure (SQL or object storage) via the [Autonomous Compliance Data Mirror](/docs/architecture/append-only-ledger#data-retention--mirroring).
 
 ---
 
-**Q: Can we run Phronesis entirely on-premise?**
+**Q: Can we run Causality entirely on-premise?**
 
 On-premise deployment is available for Enterprise tier customers. This is particularly relevant for Tier 1.5 banks with strict data residency requirements and hedge funds with air-gapped infrastructure. Contact [madan@quirkylabs.ai](mailto:madan@quirkylabs.ai) to discuss your specific requirements.
 
@@ -104,15 +104,15 @@ On-premise deployment is available for Enterprise tier customers. This is partic
 
 ## Compliance
 
-**Q: Does Phronesis "submit" DORA reports to regulators on our behalf?**
+**Q: Does Causality "submit" DORA reports to regulators on our behalf?**
 
-No. Phronesis generates a structured, pre-filled evidence pack that your qualified compliance team can review and submit. Regulatory submissions must always be authorized and filed by a responsible person at your institution. Phronesis provides the evidence — your team files the report.
+No. Causality generates a structured, pre-filled evidence pack that your qualified compliance team can review and submit. Regulatory submissions must always be authorized and filed by a responsible person at your institution. Causality provides the evidence — your team files the report.
 
 ---
 
-**Q: Does Phronesis work with both DORA (EU) and SR 26-2 (US) simultaneously?**
+**Q: Does Causality work with both DORA (EU) and SR 26-2 (US) simultaneously?**
 
-Yes. A single Phronesis deployment can serve an institution operating under both DORA and SR 26-2. The same underlying ledger data is projected into different evidence formats depending on which regulatory report you're generating. 
+Yes. A single Causality deployment can serve an institution operating under both DORA and SR 26-2. The same underlying ledger data is projected into different evidence formats depending on which regulatory report you're generating. 
 
 ---
 
@@ -124,7 +124,7 @@ Datadog and Splunk are excellent IT observability tools. They show you *that* a 
 - Flag compliance-specific anomalies (stale data usage, policy bypasses)
 - Generate DORA Article 19 structured reports
 
-Phronesis is not a replacement for Datadog — it runs alongside it, consuming the same OTel data and providing the compliance-specific intelligence layer that IT observability tools were never designed to provide.
+Causality is not a replacement for Datadog — it runs alongside it, consuming the same OTel data and providing the compliance-specific intelligence layer that IT observability tools were never designed to provide.
 
 ---
 

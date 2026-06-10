@@ -1,13 +1,13 @@
 ---
 title: Forensic Reasoning Replay
-description: How Phronesis transforms raw OpenTelemetry traces into human-readable, chronological decision trees that satisfy SR 26-2 Effective Challenge requirements.
+description: How Causality transforms raw OpenTelemetry traces into human-readable, chronological decision trees that satisfy SR 26-2 Effective Challenge requirements.
 ---
 
 import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
 # Forensic Reasoning Replay
 
-The **Forensic Reasoning Replay** is the core translation engine of Phronesis. It takes the raw, chaotic telemetry emitted by your AI agents and produces a structured, human-readable, chronological decision tree — one that both engineers and auditors can understand.
+The **Forensic Reasoning Replay** is the core translation engine of Causality. It takes the raw, chaotic telemetry emitted by your AI agents and produces a structured, human-readable, chronological decision tree — one that both engineers and auditors can understand.
 
 ## The Translation Problem
 
@@ -36,12 +36,12 @@ This is unreadable to a Risk Officer. It tells you *that* the model ran — not 
 ## How the Replay Works
 
 <Aside type="note">
-The Forensic Reasoning Replay runs entirely within Phronesis infrastructure. Your raw telemetry is never re-sent to an external LLM for interpretation — the translation is rule-based and deterministic.
+The Forensic Reasoning Replay runs entirely within Causality infrastructure. Your raw telemetry is never re-sent to an external LLM for interpretation — the translation is rule-based and deterministic.
 </Aside>
 
 ### Step 1: Span Ingestion & Validation
 
-As OTel spans arrive at the ingestion endpoint, Phronesis:
+As OTel spans arrive at the ingestion endpoint, Causality:
 
 1. Validates against the [GenAI Semantic Conventions schema](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
 2. Groups spans by `traceId` into complete workflow sessions
@@ -49,7 +49,7 @@ As OTel spans arrive at the ingestion endpoint, Phronesis:
 
 ### Step 2: Causal Graph Construction
 
-Phronesis builds a **directed acyclic graph (DAG)** of the agent's decision sequence by:
+Causality builds a **directed acyclic graph (DAG)** of the agent's decision sequence by:
 
 - Linking parent/child spans via `parentSpanId`
 - Identifying tool call spans (`gen_ai.tool.*`) and their outcomes
@@ -130,7 +130,7 @@ The Forensic Reasoning Replay directly satisfies this requirement by providing:
 
 ## Limitations & Known Constraints
 
-- **Closed-box LLM APIs**: If your LLM provider does not expose reasoning traces via OTel (e.g., some proprietary enterprise APIs), token-level thought processes cannot be captured. Phronesis captures the decision input/output boundary but not internal chain-of-thought.
+- **Closed-box LLM APIs**: If your LLM provider does not expose reasoning traces via OTel (e.g., some proprietary enterprise APIs), token-level thought processes cannot be captured. Causality captures the decision input/output boundary but not internal chain-of-thought.
 - **Span completeness**: Replay quality depends on your OTel instrumentation completeness. Uncaptured tool calls will show as gaps in the timeline.
 - **Latency**: Replay rendering adds &lt;50ms to the trace pipeline. It does not affect your agent's real-time performance.
 
