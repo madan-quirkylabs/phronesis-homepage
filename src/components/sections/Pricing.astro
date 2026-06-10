@@ -5,7 +5,7 @@
   <div class="container">
     <div class="section-header">
       <div class="section-label">💳 Pricing</div>
-      <h2>Land and expand.<br/>No surprises.</h2>
+      <h2>We believe in delivering 10x value than what we charge.</h2>
       <p>Priced per agentic workflow governed — so your cost scales with the value you're extracting. Start with a staging pilot, expand as your AI goes live.</p>
     </div>
 
@@ -17,15 +17,18 @@
 
     <!-- Pricing cards -->
     <div class="pricing-grid">
-      <!-- Tier 1 -->
-      <div class="pricing-card card" id="pricing-pilot">
+      <!-- Tier 1 - Recommended -->
+      <div class="pricing-card card pricing-card--recommended" id="pricing-pilot">
+        <div class="pricing-recommended-badge">
+          <span>⭐ Start Here</span>
+        </div>
         <div class="pricing-tier-label">The Land</div>
         <h3>Design Partner Pilot</h3>
         <div class="pricing-price">
           <span class="price-amount">$25,000</span>
           <span class="price-period">flat fee</span>
         </div>
-        <div class="price-context">60-day engagement on staging data</div>
+        <div class="price-context">Up to 25 workflows for Pilot</div>
 
         <ul class="pricing-features">
           <li>
@@ -34,7 +37,7 @@
           </li>
           <li>
             <span class="feat-check">✓</span>
-            Forensic Reasoning Replay (1 workflow)
+            Forensic Reasoning Replay
           </li>
           <li>
             <span class="feat-check">✓</span>
@@ -55,23 +58,20 @@
           Designed to stay within VP discretionary signing authority
         </div>
 
-        <a href="mailto:madan@quirkylabs.ai?subject=Phronesis%20Design%20Partner%20Pilot&body=Hi%20Madan%2C%0A%0AI%27m%20interested%20in%20the%20Phronesis%20Design%20Partner%20Pilot.%0A%0AOrganisation%3A%20%0ARole%3A%20%0AUse%20case%3A%20" class="btn btn-ghost pricing-cta" id="pricing-cta-pilot">
+        <a href="mailto:madan@quirkylabs.ai?subject=Phronesis%20Design%20Partner%20Pilot&body=Hi%20Madan%2C%0A%0AI%27m%20interested%20in%20the%20Phronesis%20Design%20Partner%20Pilot.%0A%0AOrganisation%3A%20%0ARole%3A%20%0AUse%20case%3A%20" class="btn btn-primary pricing-cta" id="pricing-cta-pilot">
           Start Pilot Discussion
         </a>
       </div>
 
-      <!-- Tier 2 — Recommended -->
-      <div class="pricing-card card pricing-card--recommended" id="pricing-production">
-        <div class="pricing-recommended-badge">
-          <span>⭐ Most Popular</span>
-        </div>
+      <!-- Tier 2 -->
+      <div class="pricing-card card" id="pricing-production">
         <div class="pricing-tier-label">The Core</div>
-        <h3>Single Workflow License</h3>
+        <h3>Production License</h3>
         <div class="pricing-price">
           <span class="price-amount">$120,000</span>
           <span class="price-period">/ year ARR</span>
         </div>
-        <div class="price-context">Production governance for 1 agentic workflow</div>
+        <div class="price-context">Production governance for up to 25 workflows</div>
 
         <ul class="pricing-features">
           <li>
@@ -112,7 +112,7 @@
           </div>
         </div>
 
-        <a href="mailto:madan@quirkylabs.ai?subject=Phronesis%20Production%20License&body=Hi%20Madan%2C%0A%0AI%27m%20interested%20in%20the%20Phronesis%20Single%20Workflow%20Production%20License.%0A%0AOrganisation%3A%20%0ARole%3A%20%0AWorkflow%20we%27d%20like%20to%20govern%3A%20" class="btn btn-primary pricing-cta" id="pricing-cta-production">
+        <a href="mailto:madan@quirkylabs.ai?subject=Phronesis%20Production%20License&body=Hi%20Madan%2C%0A%0AI%27m%20interested%20in%20the%20Phronesis%20Production%20License.%0A%0AOrganisation%3A%20%0ARole%3A%20%0AWorkflow%20we%27d%20like%20to%20govern%3A%20" class="btn btn-ghost pricing-cta" id="pricing-cta-production">
           Request Production License
         </a>
       </div>
@@ -122,8 +122,7 @@
         <div class="pricing-tier-label">The Shield</div>
         <h3>Enterprise Compliance Shield</h3>
         <div class="pricing-price">
-          <span class="price-amount">$350,000+</span>
-          <span class="price-period">/ year ARR</span>
+          <span class="price-amount">Custom</span>
         </div>
         <div class="price-context">Unlimited agents · Board-level dashboards · SLA</div>
 
@@ -160,20 +159,13 @@
 
         <div class="pricing-note">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          When you govern 50+ agents, we become core infrastructure
+          When you govern 25+ agents, we become core infrastructure
         </div>
 
         <a href="mailto:madan@quirkylabs.ai?subject=Phronesis%20Enterprise%20Shield&body=Hi%20Madan%2C%0A%0AI%27m%20interested%20in%20the%20Phronesis%20Enterprise%20Compliance%20Shield.%0A%0AOrganisation%3A%20%0ARole%3A%20%0AScale%20of%20deployment%20(# of agents)%3A%20" class="btn btn-ghost pricing-cta" id="pricing-cta-enterprise">
-          Contact for Enterprise
+          Contact Us
         </a>
       </div>
-    </div>
-
-    <!-- LTV note -->
-    <div class="ltv-note">
-      <span class="mono">// Target LTV:</span>
-      <strong>&gt;$360,000</strong>
-      <span>per institution over 3 years · LTV:CAC ratio target &gt;3x</span>
     </div>
   </div>
 </section>
@@ -216,6 +208,7 @@
   background: linear-gradient(160deg, rgba(0,212,255,0.05) 0%, var(--color-surface) 50%);
   box-shadow: var(--shadow-card), 0 0 60px rgba(0,212,255,0.1);
   transform: scale(1.02);
+  overflow: visible !important;
 }
 .pricing-card--recommended:hover {
   transform: scale(1.02) translateY(-4px);
@@ -323,18 +316,6 @@
 .roi-save { color: var(--color-green); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; }
 
 .pricing-cta { justify-content: center; width: 100%; }
-
-/* LTV note */
-.ltv-note {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  justify-content: center;
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
-  flex-wrap: wrap;
-}
-.ltv-note strong { color: var(--color-cyan); font-size: 1rem; }
 
 @media (max-width: 1024px) {
   .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }

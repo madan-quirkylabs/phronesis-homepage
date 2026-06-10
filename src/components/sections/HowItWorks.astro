@@ -6,8 +6,8 @@ import AnimatedTimeline from '../ui/AnimatedTimeline.astro';
   <div class="container">
     <div class="section-header">
       <div class="section-label">⚙ How It Works</div>
-      <h2>From chaos to clarity<br/>in four steps.</h2>
-      <p>Phronesis uses a "passive interceptor" model. Your AI agents don't change. We sit alongside them and do the translation work.</p>
+      <h2>From chaos to clarity<br/>in three steps.</h2>
+      <p>Three simple steps. Minimal effort on your side. We do the heavy lifting out of the box.</p>
     </div>
 
     <!-- Steps -->
@@ -20,15 +20,7 @@ import AnimatedTimeline from '../ui/AnimatedTimeline.astro';
           </div>
           <div class="step-content">
             <h3>Connect</h3>
-            <p>Point your existing OpenTelemetry exporter to our ingestion endpoint. One config change. No SDK to install. No code changes to your AI agents.</p>
-            <div class="step-code">
-              <span class="code-label mono">otel-config.yaml</span>
-              <pre class="code-block"><code>exporters:
-  otlp:
-    endpoint: <span class="code-cyan">ingest.phronesis.ai</span>
-    headers:
-      x-phronesis-key: <span class="code-amber">"your-key"</span></code></pre>
-            </div>
+            <p>Point your existing monitoring to Phronesis. No code changes to your AI agents. It's a completely out-of-the-box integration.</p>
           </div>
         </div>
 
@@ -38,34 +30,9 @@ import AnimatedTimeline from '../ui/AnimatedTimeline.astro';
             <div class="step-connector" aria-hidden="true"></div>
           </div>
           <div class="step-content">
-            <h3>Capture</h3>
-            <p>Every agent decision undergoes Double-Gated Semantic Validation before being locked into our append-only, hash-chained ledger in real time. The machine complexity is invisible to you.</p>
-            <div class="capture-stats">
-              <div class="cstat">
-                <span class="cstat-val">&lt;50ms</span>
-                <span class="cstat-label">Ingestion latency</span>
-              </div>
-              <div class="cstat">
-                <span class="cstat-val">100%</span>
-                <span class="cstat-label">Trace capture rate</span>
-              </div>
-              <div class="cstat">
-                <span class="cstat-val">∞</span>
-                <span class="cstat-label">Retention (mirrored)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-item" id="step-3">
-          <div class="step-header">
-            <div class="step-number">03</div>
-            <div class="step-connector" aria-hidden="true"></div>
-          </div>
-          <div class="step-content">
             <h3>Monitor</h3>
-            <p>Your CRO's board-level dashboard shows continuous oversight: agent workflows governed, anomaly counts, and compliance posture — all in plain English.</p>
-            <div class="monitor-status">
+            <p>Every agent decision is automatically captured, structured, and securely stored without any manual intervention. Your continuous compliance posture is visible at a glance.</p>
+            <div class="monitor-status" style="margin-top: 1rem;">
               <div class="status-row">
                 <span class="status-dot dot-green"></span>
                 <span>14 Agent Workflows — Governed</span>
@@ -82,13 +49,13 @@ import AnimatedTimeline from '../ui/AnimatedTimeline.astro';
           </div>
         </div>
 
-        <div class="step-item" id="step-4">
+        <div class="step-item" id="step-3">
           <div class="step-header">
-            <div class="step-number">04</div>
+            <div class="step-number">03</div>
           </div>
           <div class="step-content">
-            <h3>Report</h3>
-            <p>When an incident occurs, click "Generate Evidence Pack." Receive a perfectly structured, legally defensible incident report mapped to DORA or RBI guidelines in seconds. Not days.</p>
+            <h3>Respond</h3>
+            <p>When asked for an audit trail, click once. The evidence is ready immediately, formatted perfectly for regulatory submission.</p>
             <div class="report-output">
               <div class="report-file">
                 <span class="report-icon">📋</span>
@@ -182,49 +149,6 @@ import AnimatedTimeline from '../ui/AnimatedTimeline.astro';
 .step-content { padding-top: 0.5rem; }
 .step-content h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
 .step-content p  { font-size: 0.92rem; margin-bottom: 1rem; }
-
-/* Code block */
-.step-code {
-  background: rgba(0,0,0,0.5);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  overflow: hidden;
-}
-.code-label {
-  display: block;
-  font-size: 0.68rem;
-  color: var(--color-text-dim);
-  padding: 0.4rem 0.75rem;
-  border-bottom: 1px solid var(--color-border);
-  background: rgba(255,255,255,0.02);
-}
-.code-block {
-  padding: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  margin: 0;
-  overflow-x: auto;
-}
-.code-cyan  { color: var(--color-cyan); }
-.code-amber { color: var(--color-amber); }
-
-/* Capture stats */
-.capture-stats {
-  display: flex;
-  gap: 1.5rem;
-}
-.cstat { text-align: center; }
-.cstat-val {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-cyan);
-  display: block;
-  line-height: 1;
-}
-.cstat-label { font-size: 0.7rem; color: var(--color-text-dim); font-family: var(--font-mono); }
 
 /* Monitor status */
 .monitor-status {
