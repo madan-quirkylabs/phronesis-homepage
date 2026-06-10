@@ -2,7 +2,7 @@
 // Hero.astro
 import DoraCountdown from '../ui/DoraCountdown.astro';
 ---
-<section class="hero section bg-grid" id="hero">
+<section class="hero bg-grid" id="hero">
   <div class="hero-radial" aria-hidden="true"></div>
 
   <!-- Ambient drifting orbs -->
@@ -75,7 +75,7 @@ import DoraCountdown from '../ui/DoraCountdown.astro';
   padding-top: 200px;   /* navbar (64px) + generous breathing room */
   padding-bottom: 3rem;
   overflow: hidden;
-  position: relative;
+  position: relative; /* was provided by .section, now explicit */
 }
 
 /* ── Ambient drifting orbs ─────────────────────────────── */
