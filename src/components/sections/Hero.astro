@@ -219,6 +219,22 @@ import DoraCountdown from '../ui/DoraCountdown.astro';
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  .hero { min-height: auto; padding-block: 6rem 4rem; }
+  .hero { 
+    min-height: auto; 
+    padding-block: 8rem 4rem; /* Adjusted for mobile */
+    padding-top: 140px; /* Less top padding on mobile */
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-headline {
+    font-size: 2.2rem; /* Ensure it fits narrow screens */
+  }
+  .hero-eyebrow {
+    font-size: 0.8rem;
+  }
+  .hero {
+    padding-top: 110px; /* Even tighter for small phones */
+  }
 }
 </style>
