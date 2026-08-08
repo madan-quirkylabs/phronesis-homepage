@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RegulatoryFabric — What changed. What it means. What to do.</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="RegulatoryFabric turns RBI Master Directions and circulars into a living model — so compliance teams can see what changed, what it means for their institution, and what to do. Every conclusion traceable to the source.">
+<meta property="og:title" content="RegulatoryFabric — What changed. What it means. What to do.">
+<meta property="og:description" content="A circular lands on Friday. The board asks on Monday. RegulatoryFabric answers from the source — in minutes, not days. Built for chief compliance officers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quirkylabs.ai/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FAF7F1;
+    --card: #FFFDF8;
+    --ink: #1B1814;
+    --muted: #5E584F;
+    --line: #E4DCCE;
+    --accent: #A85A0B;
+    --hl: #FCE9B8;
+    --ok: #1F6B45;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--hl); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- nav ---------- */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line);
+  }
+  .brand { font-family: var(--serif); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; text-decoration: none; color: var(--ink); }
+  .brand em { font-style: italic; color: var(--accent); }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links a { font-size: 14.5px; font-weight: 500; color: var(--muted); text-decoration: none; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    font-size: 14px; font-weight: 600; color: var(--paper); background: var(--ink);
+    padding: 10px 18px; border-radius: 8px; text-decoration: none; white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* ---------- hero ---------- */
+  header.hero { padding: 88px 0 72px; }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 64px; align-items: center; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 22px; display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--accent); }
+  h1 {
+    font-family: var(--serif); font-weight: 500; font-size: clamp(2.15rem, 4.6vw, 3.5rem);
+    line-height: 1.08; letter-spacing: -0.015em; margin-bottom: 24px;
+  }
+  h1 .scenario { display: block; }
+  h1 .ask {
+    display: block; font-style: italic; font-weight: 400; color: var(--accent); margin-top: 6px;
+  }
+  .hero-sub { font-size: 18px; color: var(--muted); max-width: 34em; margin-bottom: 34px; }
+  .hero-sub strong { color: var(--ink); font-weight: 600; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 15px 26px; border-radius: 10px; font-size: 16px;
+    font-weight: 600; text-decoration: none; border: 1px solid transparent; min-height: 48px;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-secondary { border-color: var(--ink); color: var(--ink); background: transparent; }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+  .hero-note { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
+  .hero-note a { color: var(--accent); font-weight: 500; }
+
+  /* hero artifact — annotated circular */
+  .artifact {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 1px 0 rgba(27,24,20,.03), 0 18px 40px -24px rgba(27,24,20,.18);
+    padding: 26px 26px 20px; position: relative;
+  }
+  .artifact .doc-meta {
+    font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 18px;
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .artifact .doc-meta .tag { color: var(--accent); font-weight: 500; }
+  .provision { font-family: var(--serif); font-size: 19px; line-height: 1.45; margin-bottom: 18px; }
+  .provision .ref { font-family: var(--mono); font-size: 11.5px; color: var(--accent); display: block; margin-bottom: 8px; letter-spacing: 0.05em; }
+  mark { background: var(--hl); color: inherit; padding: 1px 4px; border-radius: 3px; }
+  .margin-note {
+    font-family: var(--mono); font-size: 12.5px; color: var(--accent); line-height: 1.5;
+    border-left: 2px solid var(--accent); padding-left: 12px; margin: 0 0 10px 4px;
+  }
+  .diff-line { font-family: var(--mono); font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+  .diff-line .gone { text-decoration: line-through; opacity: 0.55; }
+  .artifact .src-line {
+    font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+    border-top: 1px solid var(--line); padding-top: 14px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  }
+  .artifact .src-line .ok { color: var(--ok); font-weight: 500; }
+
+  /* ---------- sections ---------- */
+  section { padding: 76px 0; border-top: 1px solid var(--line); }
+  .sec-head { max-width: 640px; margin-bottom: 44px; }
+  .sec-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 3vw, 2.25rem); line-height: 1.15; letter-spacing: -0.01em; }
+  .lead { color: var(--muted); font-size: 17.5px; margin-top: 14px; max-width: 44em; }
+
+  /* moments */
+  .moments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+  .moment { border-top: 1px solid var(--ink); padding-top: 18px; }
+  .moment p { font-size: 16.5px; line-height: 1.6; }
+  .moment p em { font-family: var(--serif); font-style: italic; }
+
+  /* ritual list */
+  .ritual { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; max-width: 880px; }
+  .ritual li {
+    list-style: none; padding: 15px 0; border-bottom: 1px solid var(--line);
+    font-size: 16.5px; display: flex; gap: 14px; align-items: baseline;
+  }
+  .ritual li::before { content: "—"; font-family: var(--mono); color: var(--accent); }
+  .ritual-close { margin-top: 26px; font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--muted); max-width: 30em; }
+
+  /* three questions */
+  .questions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .q { border-top: 1px solid var(--ink); padding-top: 20px; }
+  .q .num { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.1em; }
+  .q h3 { font-family: var(--serif); font-weight: 500; font-size: 21px; margin: 10px 0 12px; }
+  .q p { color: var(--muted); font-size: 15.5px; }
+  .q .evidence { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-top: 16px; line-height: 1.5; }
+
+  /* comparison */
+  .compare { max-width: 900px; }
+  .compare-row { display: grid; grid-template-columns: 230px 1fr; gap: 28px; padding: 22px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .compare-row:first-of-type { border-top: 1px solid var(--ink); }
+  .compare-row .who { font-family: var(--serif); font-size: 18.5px; font-weight: 500; }
+  .compare-row .why { color: var(--muted); font-size: 16px; }
+  .usp { margin-top: 40px; max-width: 30em; }
+  .usp h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.35rem, 2.4vw, 1.8rem); line-height: 1.25; }
+  .usp h3 em { color: var(--accent); }
+
+  /* evidence card */
+  .evidence-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 30px 32px; max-width: 860px;
+  }
+  .evidence-card .prov-ref { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 12px; }
+  .evidence-card .prov-text { font-family: var(--serif); font-size: 20px; line-height: 1.5; margin-bottom: 22px; }
+  .evidence-list { list-style: none; }
+  .evidence-list li { padding: 11px 0; border-top: 1px solid var(--line); font-size: 15.5px; display: flex; gap: 14px; }
+  .evidence-list li::before { content: "→"; font-family: var(--mono); color: var(--accent); font-weight: 500; }
+  .evidence-list li b { font-weight: 600; }
+  .evidence-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 18px; padding-top: 16px; display: flex; gap: 20px; flex-wrap: wrap; }
+  .evidence-meta .ok { color: var(--ok); font-weight: 500; }
+  .honest { margin-top: 30px; color: var(--muted); font-size: 15.5px; max-width: 44em; }
+  .honest b { color: var(--ink); }
+
+  /* scope */
+  .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .scope-grid p { color: var(--muted); font-size: 16.5px; }
+  .scope-grid p b { color: var(--ink); }
+  .scope-stats { font-family: var(--mono); font-size: 12.5px; color: var(--accent); margin-top: 30px; letter-spacing: 0.05em; }
+
+  /* final CTA */
+  .final { border-top: 1px solid var(--ink); }
+  .final h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 18em; }
+  .cta-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; margin-top: 36px; }
+  .cta-grid .cta-side p { color: var(--muted); font-size: 16.5px; max-width: 34em; margin-bottom: 26px; }
+  .template {
+    background: var(--ink); color: #EFE9DE; border-radius: 14px; padding: 26px 28px;
+    font-family: var(--mono); font-size: 13px; line-height: 1.75;
+  }
+  .template .t-subj { color: var(--hl); margin-bottom: 10px; }
+  .template .t-line { color: #B9B0A2; }
+  .template button {
+    margin-top: 18px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.05em;
+    background: transparent; color: var(--paper); border: 1px solid #6B655C; border-radius: 8px;
+    padding: 10px 16px; cursor: pointer; min-height: 44px;
+  }
+  .template button:hover { border-color: var(--paper); }
+  .email-link { display: inline-block; margin-top: 14px; font-size: 16px; font-weight: 600; color: var(--accent); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+  .email-link:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* footer */
+  footer { border-top: 1px solid var(--line); padding: 40px 0 56px; }
+  .foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .foot p { font-size: 13.5px; color: var(--muted); }
+  .foot a { color: var(--muted); text-decoration: none; font-size: 13.5px; }
+  .foot a:hover { color: var(--ink); }
+  .foot .links { display: flex; gap: 22px; flex-wrap: wrap; }
+
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  @media (max-width: 900px) {
+    .hero-grid, .cta-grid, .scope-grid { grid-template-columns: 1fr; gap: 40px; }
+    header.hero { padding: 56px 0 48px; }
+    .moments, .questions { grid-template-columns: 1fr; gap: 28px; }
+    .ritual { grid-template-columns: 1fr; }
+    .compare-row { grid-template-columns: 1fr; gap: 6px; }
+    nav { flex-wrap: wrap; }
+    .nav-links { order: 3; width: 100%; justify-content: space-between; gap: 10px; }
+    section { padding: 56px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="wrap" aria-label="Main">
+  <a class="brand" href="#top">Regulatory<em>Fabric</em></a>
+  <div class="nav-links">
+    <a href="#moment">Sound familiar?</a>
+    <a href="#product">What we build</a>
+    <a href="#why">Why us</a>
+    <a href="#feed" title="Public regulatory feed (coming soon)">The feed</a>
+    <a class="nav-cta" href="mailto:madan@quirkylabs.ai">See what changed</a>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">For chief compliance officers · RBI master directions &amp; circulars</p>
+      <h1>
+        <span class="scenario">It&rsquo;s 5pm on a Friday. A 40-page circular just landed.</span>
+        <span class="ask">Monday, the board asks: are we affected?</span>
+      </h1>
+      <p class="hero-sub">RegulatoryFabric turns every RBI Master Direction and circular into a living model — so you can see <strong>what changed, what it means for your institution, and what to do</strong>. Every conclusion traceable to the source. In minutes, not days.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:madan@quirkylabs.ai?subject=Show%20me%20what%20changed">See what changed — free</a>
+        <a class="btn btn-secondary" href="#product">How it works</a>
+      </div>
+      <p class="hero-note">The public interface is free. No sales call required to look at your regulation.</p>
+    </div>
+
+    <div class="artifact" aria-label="Example of an annotated RBI circular in RegulatoryFabric">
+      <div class="doc-meta">
+        <span>RBI/2026-27/90 · MASTER DIRECTION — KYC</span>
+        <span class="tag">AMENDS MD-KYC (2023)</span>
+      </div>
+      <p class="provision">
+        <span class="ref">PROVISION 7.1A — REVIEW OF HIGH-RISK ACCOUNTS</span>
+        &ldquo;Banks shall conduct an <mark>annual</mark> review of all high-risk accounts&hellip;&rdquo;
+      </p>
+      <p class="margin-note">what changed → &ldquo;annual&rdquo; becomes &ldquo;half-yearly&rdquo;</p>
+      <p class="diff-line"><span class="gone">annual review</span> → half-yearly review · <b>tighter frequency</b></p>
+      <p class="diff-line">applies to: all Scheduled Commercial Banks + SFBs</p>
+      <p class="diff-line">do by: within 60 days of the close of each half-year</p>
+      <div class="src-line">
+        <span>Source: RBI MD-KYC §7.1A, as amended</span>
+        <span class="ok">✓ human-verified · current</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="moment">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-eyebrow">Sound familiar?</p>
+      <h2>We built this for the people who sign.</h2>
+      <p class="lead">The people personally accountable when a circular is missed, misread, or misunderstood.</p>
+    </div>
+    <div class="moments">
+      <div class="moment">
+        <p>The colleague who <em>&ldquo;knew&rdquo; the KYC Master Direction</em> resigned in April. Nobody else can answer the questions she used to answer.</p>
+      </div>
+      <div class="moment">
+        <p>The law-firm summary arrived Thursday. The circular was issued Monday. It says <em>&ldquo;may be impacted,&rdquo;</em> which is not an answer you can take to a board.</p>
+      </div>
+      <div class="moment">
+        <p>Your team reviewed a circular that <em>amended the Outsourcing Master Direction</em> — before realising the related circular that changed its scope had already been issued. Twice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="today">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-eyebrow">What you do today</p>
+      <h2>Understanding a circular shouldn&rsquo;t look like this.</h2>
+    </div>
+    <ul class="ritual">
+      <li>Diffing forty pages against the old version — by eye</li>
+      <li>Calling the person who &ldquo;knows&rdquo; — before they leave</li>
+      <li>Waiting for summaries you can&rsquo;t verify</li>
+      <li>Hoping you didn&rsquo;t miss the circular that amends the one you&rsquo;re reading</li>
+      <li>Keeping the answer in someone&rsquo;s head instead of in the institution</li>
+    </ul>
+    <p class="ritual-close">None of this is your team&rsquo;s fault. The tools never matched the job.</p>
+  </div>
+</section>
+
+<section id="product">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-eyebrow">What we build</p>
+      <h2>Every circular raises three questions. One model answers all three.</h2>
+    </div>
+    <div class="questions">
+      <div class="q">
+        <p class="num">01</p>
+        <h3>What does this circular say?</h3>
+        <p>Every provision, structured and sourced from the RBI website. The text is the text — no interpretation mixed in until you want it.</p>
+        <p class="evidence">provision-by-provision · sourced</p>
+      </div>
+      <div class="q">
+        <p class="num">02</p>
+        <h3>What changed from before?</h3>
+        <p>A word-level diff against the version it amends — with the change classified: new obligation, tightened timeline, widened scope — and linked to the full amendment chain.</p>
+        <p class="evidence">diff · classified · amendment chain</p>
+      </div>
+      <div class="q">
+        <p class="num">03</p>
+        <h3>What do we need to do?</h3>
+        <p>Obligations extracted: who&rsquo;s affected, what&rsquo;s required, by when. Your team reviews and decides. The system shows its work.</p>
+        <p class="evidence">obligation · deadline · applies-to</p>
+      </div>
+    </div>
+    <p class="honest" style="margin-top:34px; max-width:44em;"><b>Nothing appears without a source.</b> Every answer links back to the exact provision — so the call is yours to own, not ours to assert.</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-eyebrow">Why us</p>
+      <h2>Why not the tools you already have?</h2>
+      <p class="lead">Because none of them answer the question you actually get asked.</p>
+    </div>
+    <div class="compare">
+      <div class="compare-row">
+        <div class="who">GRC platforms</div>
+        <div class="why">They manage workflows after you&rsquo;ve understood the regulation. They don&rsquo;t help you understand it.</div>
+      </div>
+      <div class="compare-row">
+        <div class="who">Law-firm summaries</div>
+        <div class="why">Written for everyone, so they&rsquo;re written for no one. Late, general, and untraceable to the provision.</div>
+      </div>
+      <div class="compare-row">
+        <div class="who">PDF diff tools</div>
+        <div class="why">They show that text changed. Not what it means — or whether it applies to your institution.</div>
+      </div>
+      <div class="compare-row">
+        <div class="who">Generic AI chat</div>
+        <div class="why">Confident, sometimes wrong — and you can&rsquo;t stake your name on something you can&rsquo;t verify.</div>
+      </div>
+    </div>
+    <div class="usp">
+      <h3>RegulatoryFabric is the only one that <em>shows its work</em> — every conclusion traces to the exact provision.</h3>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-eyebrow">Show your work</p>
+      <h2>This is the interface we&rsquo;re shipping.</h2>
+    </div>
+    <div class="evidence-card">
+      <p class="prov-ref">MD-KYC · PROVISION 7.1A — REVIEW OF HIGH-RISK ACCOUNTS</p>
+      <p class="prov-text">&ldquo;Banks shall conduct an annual review of all high-risk accounts&hellip;&rdquo;</p>
+      <ul class="evidence-list">
+        <li><b>What changed:</b> &ldquo;annual&rdquo; → &ldquo;half-yearly&rdquo; (Circular RBI/2026-27/90)</li>
+        <li><b>Applies to:</b> All Scheduled Commercial Banks; Small Finance Banks</li>
+        <li><b>Do by:</b> within 60 days of the close of each half-year</li>
+        <li><b>Related:</b> amended by the same circular that touched §4.2 record-keeping</li>
+      </ul>
+      <div class="evidence-meta">
+        <span>Source: RBI Master Direction on KYC, as amended</span>
+        <span class="ok">✓ human-verified</span>
+        <span>Interpretation: FACE guidance attached</span>
+        <span>Status: current</span>
+      </div>
+    </div>
+    <p class="honest">This is not a mock-up of a dream. It&rsquo;s the public feed we&rsquo;re building — and it&rsquo;s free. Start with the KYC Master Direction and its amendment chain; every other RBI Master Direction follows.</p>
+  </div>
+</section>
+
+<section id="feed">
+  <div class="wrap">
+    <div class="scope-grid">
+      <div>
+        <p class="sec-eyebrow">Where we start</p>
+        <h2 style="font-size:clamp(1.5rem,2.8vw,2rem);">Inch wide, mile deep: the Reserve Bank of India.</h2>
+        <p style="margin-top:18px;">We&rsquo;re building where it hurts most — <b>all 47 RBI Master Directions and the circulars that amend them</b>, provision by provision, linked into one model. Singapore, the UK, and the US come next.</p>
+      </div>
+      <div>
+        <p class="sec-eyebrow">What we are not</p>
+        <p>We are not a GRC suite, a document reader, or an AI oracle. We&rsquo;re the <b>regulatory layer</b> — the source of truth between the regulator and your team. Understanding first. Workflow later.</p>
+        <p class="scope-stats">47 master directions · 1 model · no black boxes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="contact">
+  <div class="wrap">
+    <p class="sec-eyebrow">Start here</p>
+    <h2>Start with the regulation that keeps you up at night.</h2>
+    <div class="cta-grid">
+      <div class="cta-side">
+        <p>Tell us which circular or Master Direction it is. We&rsquo;ll show you what we can already do with it — its amendment chain, its diffs, its obligations. If it helps your team, we&rsquo;ll set you up on the private workspace.</p>
+        <a class="btn btn-primary" href="mailto:madan@quirkylabs.ai">Write to us — reply within 24 hours</a><br>
+        <a class="email-link" href="mailto:madan@quirkylabs.ai">madan@quirkylabs.ai</a>
+      </div>
+      <div class="template">
+        <p class="t-subj">Subject: The circular that keeps me up at night</p>
+        <p class="t-line">Name: [your name]</p>
+        <p class="t-line">Organisation: [bank / NBFC / fintech]</p>
+        <p class="t-line">Role: [your title]</p>
+        <p class="t-line">We&rsquo;re trying to understand: [circular / Master Direction]</p>
+        <p class="t-line">Our compliance team has: [n] people</p>
+        <button type="button" id="copyTemplate">Copy template</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <p>RegulatoryFabric — a QuirkyLabs product. Built for banks, NBFCs, and regulated fintechs. India first; Singapore, UK, US next.</p>
+    <div class="links">
+      <a href="#top">Top</a>
+      <a href="#product">Product</a>
+      <a href="#feed">Scope</a>
+      <a href="mailto:madan@quirkylabs.ai">Contact</a>
+      <a href="#top">Privacy</a>
+      <a href="#top">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copyTemplate');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var text = [
+        'Subject: The circular that keeps me up at night',
+        'Name: [your name]',
+        'Organisation: [bank / NBFC / fintech]',
+        'Role: [your title]',
+        "We're trying to understand: [circular / Master Direction]",
+        'Our compliance team has: [n] people'
+      ].join('\n');
+      var done = function () {
+        var old = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = old; }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+      } else { fallback(); }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

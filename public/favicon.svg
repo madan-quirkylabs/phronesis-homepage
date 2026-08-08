@@ -1,15 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#00d4ff"/>
-      <stop offset="100%" stop-color="#3b82f6"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="8" fill="url(#g)"/>
-  <path d="M9 16 L16 9 L23 16 L16 23 Z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-  <circle cx="16" cy="16" r="3" fill="white"/>
-  <path d="M16 9 L16 5" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-  <path d="M23 16 L27 16" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-  <path d="M16 23 L16 27" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-  <path d="M9 16 L5 16" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#1B1814"/>
+  <text x="32" y="41" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="600" fill="#FAF7F1" text-anchor="middle">RF</text>
+  <rect x="16" y="49" width="32" height="3" rx="1.5" fill="#A85A0B"/>
 </svg>
